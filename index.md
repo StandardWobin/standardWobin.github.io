@@ -10,6 +10,6 @@ A part of the first task is to perform a SWOT analysis in relation to yourself a
 ### TASK 00
 1. Prepare working environment -> check
 2. Select a presentation topic -> check
-3. SWOT analysis of yourself ->   [click](/SWOT.md)
+3. SWOT analysis of yourself ->   [click](/SWOT)
 
 
