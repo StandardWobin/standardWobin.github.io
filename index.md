@@ -1,6 +1,6 @@
 # Welcome to Robin simply landing page
 
-this website was created by Robin as part of the HFU course interaction design with Prof. Rausch.
+this website was created by Robin's as part of the HFU course interaction design with Prof. Rausch.
 
 
 ## TASKS
