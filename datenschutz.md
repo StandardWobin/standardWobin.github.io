@@ -1,4 +1,4 @@
-<a href="/index.md"> back to front page<a>
+<p><a href="/index.md/"> back to front page<a><p>
 
 Datenschutzerklärung
 
