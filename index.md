@@ -11,6 +11,6 @@ A part of the first task is to perform a SWOT analysis in relation to yourself a
 ```markdown
 1. Prepare working environment -> check
 2. Select a presentation topic -> check
-3. SWOT analysis of yourself ->   <a href="/swot">SWOT</a>
+3. SWOT analysis of yourself ->   [click](/swot)
 
 ```
