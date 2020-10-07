@@ -1,4 +1,4 @@
-(back to landing page)[/index.md]
+<a href="/index.md"> back to front page<a>
 
 Datenschutzerklärung
 
