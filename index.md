@@ -4,8 +4,7 @@ this website was created by Robin as part of the HFU course interaction design w
 
 
 ## TASKS
-
-A part of the first task is to perform a SWOT analysis in relation to yourself and the course Interaction Design
+Within the scope of this course various tasks have to be accomplished:
 
 ### TASK 00
 1. Prepare working environment -> check
