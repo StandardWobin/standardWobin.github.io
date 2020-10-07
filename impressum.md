@@ -5,7 +5,7 @@ Robin Haensse
 06404 665757
 
 Kontakt:
-E-mail: jonathan.robin.haensse@mundwerk-theaterkollektiv.de
+E-mail: jonathan.robin.haensse@hs-furtwangen.de
 
 
 Haftungsausschluss: 
