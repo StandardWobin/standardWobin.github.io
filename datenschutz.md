@@ -23,9 +23,7 @@ Verwendete Begrifflichkeiten
 
 Daten-Erhebung durch die Nutzung von GitHub Pages
 
-Diese Landing Page wird auf dem Server von Github Inc., 88 Colin P Kelly Jr St, San Francisco, CA 94107, USA gehostet. Bitte beachten Sie daher die GitHub Privacy Policy und GitHub Global Privacy Practices.
-
-Github verfügt über eine Zertifizierung nach dem EU-US-Privacy-Shield.
+Diese Landing Page wird auf dem Server von Github Inc. (88 Colin P Kelly Jr St, San Francisco, CA 94107, USA) gehostet. Bitte beachten Sie daher die GitHub Privacy Policy sowie die GitHub Global Privacy Practices.
 
 „Personenbezogene Daten“ sind alle Informationen, die sich auf eine identifizierte oder identifizierbare natürliche Person (im Folgenden „betroffene Person“) beziehen; als identifizierbar wird eine natürliche Person angesehen, die direkt oder indirekt, insbesondere mittels Zuordnung zu einer Kennung wie einem Namen, zu einer Kennnummer, zu Standortdaten, zu einer Online-Kennung (z.B. Cookie) oder zu einem oder mehreren besonderen Merkmalen identifiziert werden kann, die Ausdruck der physischen, physiologischen, genetischen, psychischen, wirtschaftlichen, kulturellen oder sozialen Identität dieser natürlichen Person sind.
 
