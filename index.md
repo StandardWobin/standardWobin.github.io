@@ -1,4 +1,4 @@
-# Welcome to Robin's simply landing page
+# Welcome to Robin's link and task container
 
 this website was created as part of the HFU course interaction design with Prof. Rausch.
 
