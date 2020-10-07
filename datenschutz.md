@@ -4,7 +4,7 @@ Diese Datenschutzerklärung klärt Sie über die Art, den Umfang und Zweck der V
 
 Verantwortlicher
 Robin Haensse
-0175 70743456
+06404 665757
 
 Kontakt:
 E-mail: jonathan.robin.haensse@hs-furtwangen.de
