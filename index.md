@@ -12,5 +12,6 @@ A part of the first task is to perform a SWOT analysis in relation to yourself a
 1. Prepare working environment -> check
 2. Select a presentation topic -> check
 3. SWOT analysis of yourself ->   [click](/swot)
+[I'm an inline-style link](https://www.google.com)
 
 ```
