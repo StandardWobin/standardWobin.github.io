@@ -12,4 +12,18 @@ A part of the first task is to perform a SWOT analysis in relation to yourself a
 2. Select a presentation topic -> check
 3. SWOT analysis of yourself ->   [click](/SWOT.md)
 
+### TASK 01
+### TASK 02
+### TASK 03
+### TASK 04
+### TASK 05
+### TASK 06
+### TASK 07
+### TASK 08
+### TASK 09
+### TASK 10
+### TASK 11
+### TASK 12
+
+
 
