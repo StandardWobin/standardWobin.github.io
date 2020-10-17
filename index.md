@@ -14,8 +14,9 @@ Within the scope of this course various tasks have to be accomplished:
 ### TASK 01
 please view pdf in task01.rar
 
-under consideration of the privacy policy this file is password protected. Please use the course password### TASK 02
+under consideration of the privacy policy this file is password protected. Please use the course password
 [click](/task01.rar)
+### TASK 02
 ### TASK 03
 ### TASK 04
 ### TASK 05
