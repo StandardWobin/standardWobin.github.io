@@ -12,7 +12,10 @@ Within the scope of this course various tasks have to be accomplished:
 3. SWOT analysis of yourself ->   [click](/SWOT.md)
 
 ### TASK 01
-### TASK 02
+please view pdf in task01.rar
+
+under consideration of the privacy policy this file is password protected. Please use the course password### TASK 02
+[click](/task01.rar)
 ### TASK 03
 ### TASK 04
 ### TASK 05
