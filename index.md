@@ -17,7 +17,7 @@ please view pdf in task01.rar
 under consideration of the privacy policy this file is password protected. Please use the course password
 [download](/task01.rar)
 ### TASK 02
-1. concept for plant viewer (drawn) ->   [click](/scan0007.jpg)
+1. concept for plant viewer (drawn) ->   [click](/Scan0007.jpg)
 
 ### TASK 03
 ### TASK 04
