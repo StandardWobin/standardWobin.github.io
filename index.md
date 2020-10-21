@@ -15,7 +15,9 @@ Within the scope of this course various tasks have to be accomplished:
 please view pdf in task01.rar
 
 under consideration of the privacy policy this file is password protected. Please use the course password
-[download](/task01.rar)
+[download rar](/task01.rar)
+[download zip](/task01.zip)
+
 ### TASK 02
 1. concept for plant viewer (drawn) ->   [click](/Scan0007.jpg)
 
