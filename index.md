@@ -18,10 +18,15 @@ under consideration of the privacy policy this file is password protected. Pleas
 [download rar](/task01.rar)
 
 ### TASK 02
-1. concept for plant viewer (drawn) ->   [click](/Scan0007.jpg)
+1. concept for plant viewer (LowFid) ->   [click](/Scan0007.jpg)
+![](screen.gif)
+2. Mid-/Highfid -> [click](https://xd.adobe.com/view/3e19e366-6382-450b-bfea-7027598a5683-6b4a)
 
 ### TASK 03
+1. Mid-/Highfid -> [click](https://xd.adobe.com/view/3e19e366-6382-450b-bfea-7027598a5683-6b4a)
 ### TASK 04
+1. Mid-/Highfid -> [click](https://xd.adobe.com/view/3e19e366-6382-450b-bfea-7027598a5683-6b4a)
+
 ### TASK 05
 ### TASK 06
 ### TASK 07
