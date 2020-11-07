@@ -19,8 +19,9 @@ under consideration of the privacy policy this file is password protected. Pleas
 
 ### TASK 02
 1. concept for plant viewer (LowFid) ->   [click](/Scan0007.jpg)
-![](screen.gif)
 2. Mid-/Highfid -> [click](https://xd.adobe.com/view/3e19e366-6382-450b-bfea-7027598a5683-6b4a)
+Demo of big screen:
+![](screen.gif)
 
 ### TASK 03
 1. Mid-/Highfid -> [click](https://xd.adobe.com/view/3e19e366-6382-450b-bfea-7027598a5683-6b4a)
