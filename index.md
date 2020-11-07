@@ -25,6 +25,7 @@ Demo of big screen:
 
 ### TASK 03
 1. Mid-/Highfid -> [click](https://xd.adobe.com/view/3e19e366-6382-450b-bfea-7027598a5683-6b4a)
+
 ### TASK 04
 1. Mid-/Highfid -> [click](https://xd.adobe.com/view/3e19e366-6382-450b-bfea-7027598a5683-6b4a)
 
