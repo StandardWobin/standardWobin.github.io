@@ -1,53 +1,36 @@
 window.addEventListener("load", function () {
     const artyom = new Artyom();
-    let appointments = [
+    let factorys = [
         {
             name: "Vorlesung",
-            time: "9",
-            location: "Alfaview"
+            sick: "9",
+            production: "234"
         },
         {
             name: "Meeting",
-            time: "12",
-            location: "Discord"
+            sick: "12",
+            production: "234324"
         },
         {
             name: "Treffen mit Paul",
-            time: "15",
-            location: "Cafe"
-        },
-        {
-            name: "Besprechung mit Team",
-            time: "18",
-            location: "Skype"
-        },
-        {
-            name: "Serien anschauen",
-            time: "20",
-            location: "Netflix"
-        }
+            sick: "15",
+            production: "234324"
+        }    
     ];
-    let appointmentsByName;
+    let factorysByName;
     let suggestions1 = [
         "'Was habe ich noch vor'",
         "'Wie lautet mein dritter Termin'",
         "'Wie lautet mein nächster Termin'"
     ];
     let suggestions2 = [
-        `'Wann findet ${appointments[4].name} statt?'`,
-        `'Wo findet ${appointments[3].name} statt?'`
+        `'Wann findet ${factorys[4].name} statt?'`,
+        `'Wo findet ${factorys[3].name} statt?'`
     ];
 
 
 
-    artyom.addCommands({
-        description: "appointment Xoteer",
-        indexes: [/for the time/],
-        smart: true,
-        action: function (_i, _wildcard) {
-            console.log("time", _wildcard)
-        }
-    });
+
 
 
 
@@ -61,10 +44,17 @@ window.addEventListener("load", function () {
     });
 
 
+    artyom.addCommands({
+        description: "appointment Xoteer",
+        indexes: [/factory [abc]/],
+        smart: true,
+        action: function (_i, _wildcard) {
+            console.log("asdasd", _wildcard)
+        }
+    });as
 
 
-
-    mapAppointments();
+    mapfactorys();
     document.getElementById("start").addEventListener("click", start);
     function start() {
         artyom.fatality();
@@ -86,23 +76,23 @@ window.addEventListener("load", function () {
              });
         }, 250);
     }
-    function listAppointments(_unmentionedAppointments, _mentionedAppointments = []) {
-        console.log(_unmentionedAppointments);
-        for (const appointment of _unmentionedAppointments) {
-            _mentionedAppointments.push(appointment);
-            listAppointment(appointment);
+    function listFactorys(_unmentionedfactorys, _mentionedfactorys = []) {
+        console.log(_unmentionedfactorys);
+        for (const appointment of _unmentionedfactorys) {
+            _mentionedfactorys.push(appointment);
+            listFactory(appointment);
         }
-        promptAppointments(_mentionedAppointments);
+        promptfactorys(_mentionedfactorys);
     }
-    function listAppointment(_appointment) {
-        artyom.say(_appointment.name);
+    function listFactory(_factory) {
+        artyom.say("In factory " + _factory.name + " there are " + _factory.sick " people sick and " + _factory.production + " parts has been done today");
     }
-    function listAppointmentDetailed(_appointment, time = true, location = true) {
-        artyom.say(_appointment.name);
-        artyom.say("um " + _appointment.time + " Uhr");
-        artyom.say("in " + _appointment.location);
+    function listFactoryDetailed(_factory, time = true, location = true) {
+        artyom.say(_factory.name);
+        artyom.say("um " + _factory.time + " Uhr");
+        artyom.say("in " + _factory.location);
     }
-    function appointmentByCounter(_wildcard, _mentionedAppointments = []) {
+    function appointmentByCounter(_wildcard, _mentionedfactorys = []) {
         let askedAppointment;
         let appointmentNumber;
         let appointmentCounter = [
@@ -120,49 +110,49 @@ window.addEventListener("load", function () {
         for (const key in appointmentCounter) {
             if (_wildcard.match(appointmentCounter[key])) {
                 appointmentNumber = appointmentCounter[key];
-                askedAppointment = appointments[key];
+                askedAppointment = factorys[key];
                 break;
             }
         }
         if (!askedAppointment) {
             if (_wildcard.match("letzter")) {
                 appointmentNumber = "letzter";
-                askedAppointment = appointments[appointments.length - 1];
+                askedAppointment = factorys[factorys.length - 1];
             }
             else if (appointmentNumber) {
                 artyom.say(`Ein ${appointmentNumber} Termin steht heute nicht auf dem Plan`);
-                promptAppointments(_mentionedAppointments);
+                promptfactorys(_mentionedfactorys);
                 return;
             }
         }
         if (askedAppointment) {
-            _mentionedAppointments.push(askedAppointment);
+            _mentionedfactorys.push(askedAppointment);
             artyom.say(`Dein ${appointmentNumber} Termin lautet: `);
-            listAppointmentDetailed(askedAppointment);
+            listFactoryDetailed(askedAppointment);
         }
         else {
             artyom.say("Das habe ich nicht Verstanden.");
         }
-        promptAppointments(_mentionedAppointments);
+        promptfactorys(_mentionedfactorys);
     }
-    function promptAppointments(_mentionedAppointments, _appointmentFound = true) {
-        let unmentionedAppointments = appointments.filter(_value => !_mentionedAppointments.includes(_value));
+    function promptfactorys(_mentionedfactorys, _factoryFound = true) {
+        let unmentionedfactorys = factorys.filter(_value => !_mentionedfactorys.includes(_value));
         let suggestion;
         let question;
-        if (unmentionedAppointments.length > 0) {
+        if (unmentionedfactorys.length > 0) {
             suggestion = suggestions1.pop();
-            question = `Du hast noch ${unmentionedAppointments.length == 1 ? "einen weiteren Termin" : (unmentionedAppointments.length + " weitere Termine")}. Wenn du wissen willst was du noch vor hast `;
+            question = `Du hast noch ${unmentionedfactorys.length == 1 ? "einen weiteren Termin" : (unmentionedfactorys.length + " weitere Termine")}. Wenn du wissen willst was du noch vor hast `;
         }
         else {
             suggestion = suggestions2.pop();
-            question = `${_appointmentFound ? "" : "Das habe ich nicht Verstanden."} Wenn du genauere Informationen zu deinen Terminen haben willst `;
+            question = `${_factoryFound ? "" : "Das habe ich nicht Verstanden."} Wenn du genauere Informationen zu deinen Terminen haben willst `;
         }
         if (suggestion) {
             question += `sag zum Beispiel ${suggestion}.`;
         }
         else {
             question += "frag einfach nach. ";
-            if (unmentionedAppointments.length == 0)
+            if (unmentionedfactorys.length == 0)
                 question += "Wenn du nichts mehr Wissen willst sag einfach Stop";
         }
         artyom.newPrompt({
@@ -179,39 +169,39 @@ window.addEventListener("load", function () {
             onMatch: (_index, _wildcard) => {
                 switch (_index) {
                     case 0:
-                        _mentionedAppointments.push(unmentionedAppointments[0]);
+                        _mentionedfactorys.push(unmentionedfactorys[0]);
                         return () => {
-                            listAppointmentDetailed(unmentionedAppointments[0]);
-                            promptAppointments(_mentionedAppointments);
+                            listFactoryDetailed(unmentionedfactorys[0]);
+                            promptfactorys(_mentionedfactorys);
                         };
                     case 1:
                         return () => {
                             artyom.say("Deine anderen Termine lauten: ");
-                            listAppointments(unmentionedAppointments, _mentionedAppointments);
+                            listFactorys(unmentionedfactorys, _mentionedfactorys);
                         };
                     case 2:
-                        return () => appointmentByCounter(_wildcard, _mentionedAppointments);
+                        return () => appointmentByCounter(_wildcard, _mentionedfactorys);
                     case 3:
                     case 4:
                         let askedAppointment;
-                        for (const key in appointmentsByName) {
+                        for (const key in factorysByName) {
                             let match = _wildcard.match(key.toLocaleLowerCase());
                             if (match) {
                                 console.log(match);
-                                askedAppointment = appointmentsByName[key];
+                                askedAppointment = factorysByName[key];
                                 break;
                             }
                         }
                         if (askedAppointment) {
-                            _mentionedAppointments.push(askedAppointment);
+                            _mentionedfactorys.push(askedAppointment);
                             return () => {
                                 artyom.say(`Dein Termin ${askedAppointment.name} findet ${_index == 3 ? `in ${askedAppointment.location}` : `um ${askedAppointment.time} Uhr`} statt`);
-                                promptAppointments(_mentionedAppointments);
+                                promptfactorys(_mentionedfactorys);
                             };
                         }
                         else {
                             return () => {
-                                promptAppointments(_mentionedAppointments, false);
+                                promptfactorys(_mentionedfactorys, false);
                             };
                         }
                     default:
@@ -222,10 +212,10 @@ window.addEventListener("load", function () {
             }
         });
     }
-    function mapAppointments() {
-        appointmentsByName = {};
-        for (const appointment of appointments) {
-            appointmentsByName[appointment.name] = appointment;
+    function mapfactorys() {
+        factorysByName = {};
+        for (const appointment of factorys) {
+            factorysByName[appointment.name] = appointment;
         }
     }
 });
