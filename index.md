@@ -39,6 +39,16 @@ Demo of big screen:
 ### TASK 10
 ### TASK 11
 ### TASK 12
+### TASK 12
+
+### TASK 12
+
+### TASK 12
+
+### TASK 12
+
+### NOT DONE YET
+1. VUI -> [click](/task06/index.html)
 
 
 
