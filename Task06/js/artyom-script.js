@@ -51,7 +51,7 @@ window.addEventListener("load", function () {
         action: function (_i, _wildcard) {
             console.log("asdasd", _wildcard)
         }
-    });as
+    });
 
 
     mapfactorys();
