@@ -24,8 +24,8 @@ window.addEventListener("load", function () {
         "'Wie lautet mein nächster Termin'"
     ];
     let suggestions2 = [
-        `'Wann findet ${factorys[4].name} statt?'`,
-        `'Wo findet ${factorys[3].name} statt?'`
+        `'Wann findet ${factorys[0].name} statt?'`,
+        `'Wo findet ${factorys[1].name} statt?'`
     ];
 
 
