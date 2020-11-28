@@ -43,10 +43,10 @@ window.addEventListener("load", function () {
 
     artyom.addCommands({
         description: "appointment X",
-        indexes: ["factory *"],
+        indexes: [/factory [abcABC]( and |&)[abcABC]/],
         smart: true,
         action: function (_i, _wildcard) {
-            console.log("understood plant", _wildcard)
+            console.log("you want to see two factories", _wildcard)
         }
     });
 
