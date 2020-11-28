@@ -214,8 +214,8 @@ window.addEventListener("load", function () {
     }
     function mapfactorys() {
         factorysByName = {};
-        for (const appointment of factorys) {
-            factorysByName[appointment.name] = appointment;
+        for (const facto of factorys) {
+            factorysByName[facto.name] = facto;
         }
     }
 });
