@@ -37,15 +37,68 @@ window.addEventListener("load", function () {
         `'Wann findet ${appointments[4].name} statt?'`,
         `'Wo findet ${appointments[3].name} statt?'`
     ];
+
+
+    
     artyom.addCommands({
-        description: "Liste alle Termine",
-        indexes: [/was habe ich heute vor/, /alle Termine/],
+        description: "easter egg",
+        indexes: [/easter egg/, /easteregg/],
         smart: true,
         action: function (_i) {
-            artyom.say("Du hast heute vor: ");
-            listAppointments(appointments, []);
+            artyom.say(`We're no strangers to love
+            You know the rules and so do I
+            A full commitment's what I'm thinking of
+            You wouldn't get this from any other guy
+            I just wanna tell you how I'm feeling
+            Gotta make you understand
+            Never gonna give you up
+            Never gonna let you down
+            Never gonna run around and desert you
+            Never gonna make you cry
+            Never gonna say goodbye
+            Never gonna tell a lie and hurt you
+            We've known each other for so long
+            Your heart's been aching but you're too shy to say it
+            Inside we both know what's been going on
+            We know the game and we're gonna play it
+            And if you ask me how I'm feeling
+            Don't tell me you're too blind to see
+            Never gonna give you up
+            Never gonna let you down
+            Never gonna run around and desert you
+            Never gonna make you cry
+            Never gonna say goodbye
+            Never gonna tell a… `);
         }
     });
+
+
+
+    
+    artyom.addCommands({
+        description: "easter egg",
+        indexes: [/hello/, /hi/],
+        smart: true,
+        action: function (_i) {
+            artyom.say(`hey bitch`);
+        }
+    });
+
+
+    artyom.addCommands({
+        description: "easter egg",
+        indexes: [/hello you/, /hi you/],
+        smart: true,
+        action: function (_i) {
+            artyom.say(`hey bitch`);
+        }
+    });
+
+
+
+
+
+
     artyom.addCommands({
         description: "appointment X",
         indexes: ["* Termin"],
@@ -60,15 +113,20 @@ window.addEventListener("load", function () {
         artyom.fatality();
         setTimeout(function () {
             artyom.initialize({
-                lang: "de-DE",
+                lang: "en-US",
                 continuous: true,
                 listen: true,
                 interimResults: true,
                 debug: true
             }).then(function () {
                 console.log("Ready!");
-                artyom.say("Guten Morgen, Zeit aufzustehen. Es ist jetzt 8 Uhr. Für heute stehen mehrere Termine für dich an. Wenn du wissen willst was du heute geplant hast sag zum Beispiel 'Wie lautet mein erster Termin'");
-            });
+                artyom.sayRandom([
+                    "Good Morning",
+                    "Hey, good to see you again",
+                    "Hello, I don't have anything to say today",
+                    "Hey, Did you remember that I didn't say nothing yesterday? Well, today I dont want neither."
+                ]);
+             });
         }, 250);
     }
     function listAppointments(_unmentionedAppointments, _mentionedAppointments = []) {
