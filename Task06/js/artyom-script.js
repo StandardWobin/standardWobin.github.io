@@ -43,7 +43,7 @@ window.addEventListener("load", function () {
 
     artyom.addCommands({
         description: "appointment X",
-        indexes: ["plant *"],
+        indexes: ["factory *"],
         smart: true,
         action: function (_i, _wildcard) {
             console.log("understood plant", _wildcard)
