@@ -61,7 +61,7 @@ window.addEventListener("load", function () {
     artyom.addCommands({
         description: "easter egg",
         indexes: [/hello/, "hi"],
-        smart: False,
+        smart: false,
         action: function (_i) {
             artyom.say(`hey bitch one`);
         }
@@ -82,7 +82,7 @@ window.addEventListener("load", function () {
         indexes: [/hello you/, /hi you/],
         smart: true,
         action: function (_i) {
-            artyom.say(`hey bitch two`);
+            artyom.say(`hey bitch three`);
         }
     });
 
