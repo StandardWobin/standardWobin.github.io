@@ -42,7 +42,7 @@ window.addEventListener("load", function () {
     
     artyom.addCommands({
         description: "easter egg",
-        indexes: [/easter egg/, /easteregg/],
+        indexes: [/Easter egg/, /Easteregg/],
         smart: true,
         action: function (_i) {
             artyom.say(`We're no strangers to love
@@ -80,7 +80,7 @@ window.addEventListener("load", function () {
         indexes: [/hello/, "hi"],
         smart: true,
         action: function (_i) {
-            artyom.say(`hey bitch`);
+            artyom.say(`hey bitch one`);
         }
     });
 
@@ -90,7 +90,7 @@ window.addEventListener("load", function () {
         indexes: [/hello you/, /hi you/],
         smart: true,
         action: function (_i) {
-            artyom.say(`hey bitch`);
+            artyom.say(`hey bitch two`);
         }
     });
 
