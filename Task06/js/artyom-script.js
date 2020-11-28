@@ -39,66 +39,21 @@ window.addEventListener("load", function () {
     ];
 
 
-    
-    artyom.addCommands({
-        description: "easter egg",
-        indexes: [/Easter egg/, /Easteregg/],
-        smart: true,
-        action: function (_i) {
-            artyom.say(`
-            Never gonna give you up
-            Never gonna let you down
-            Never gonna run around and desert you
-            Never gonna make you cry
-            Never gonna say goodbye
-            Never gonna tell a lie and hurt you`);
-        }
-    });
-
-
-
-    
-    artyom.addCommands({
-        description: "easter egg",
-        indexes: [/hello/, "hi"],
-        smart: false,
-        action: function (_i) {
-            artyom.say(`hey bitch one`);
-        }
-    });
-
-
-    artyom.addCommands({
-        description: "easter egg2 ",
-        indexes: [/hello you/, /hi you/],
-        smart: true,
-        action: function (_i) {
-            artyom.say(`hey bitch two`);
-        }
-    });
-
-    artyom.addCommands({
-        description: "easter egg3 ",
-        indexes: [/hello you/, /hi you/],
-        smart: true,
-        action: function (_i) {
-            artyom.say(`hey bitch three`);
-        }
-    });
-
-
-
-
 
 
     artyom.addCommands({
         description: "appointment X",
-        indexes: ["* Termin"],
+        indexes: ["plant *"],
         smart: true,
         action: function (_i, _wildcard) {
-            appointmentByCounter(_wildcard);
+            console.log("understood plant", _wildcard)
         }
     });
+
+
+
+
+
     mapAppointments();
     document.getElementById("start").addEventListener("click", start);
     function start() {
