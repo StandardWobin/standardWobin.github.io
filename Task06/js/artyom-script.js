@@ -77,7 +77,7 @@ window.addEventListener("load", function () {
     
     artyom.addCommands({
         description: "easter egg",
-        indexes: [/hello/, /hi/],
+        indexes: [/hello/, "hi"],
         smart: true,
         action: function (_i) {
             artyom.say(`hey bitch`);
