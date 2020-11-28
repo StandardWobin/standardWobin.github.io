@@ -40,10 +40,20 @@ window.addEventListener("load", function () {
 
 
 
+    artyom.addCommands({
+        description: "appointment Xoteer",
+        indexes: [/for the time/],
+        smart: true,
+        action: function (_i, _wildcard) {
+            console.log("time", _wildcard)
+        }
+    });
+
+
 
     artyom.addCommands({
         description: "appointment X",
-        indexes: [/factory [abcABC]( and |&)[abcABC]/],
+        indexes: [/factory [abcABC]( and |&)(the )?(other )?(factory )?[abcABC]/],
         smart: true,
         action: function (_i, _wildcard) {
             console.log("you want to see two factories", _wildcard)
