@@ -85,7 +85,7 @@ window.addEventListener("load", function () {
         promptfactorys(_mentionedfactorys);
     }
     function listFactory(_factory) {
-        artyom.say("In factory " + _factory.name + " there are " + _factory.sick " people sick and " + _factory.production + " parts has been done today");
+        artyom.say("In factory " + _factory.name + " there are " + _factory.sick + " people sick and " + _factory.production + " parts has been done today");
     }
     function listFactoryDetailed(_factory, time = true, location = true) {
         artyom.say(_factory.name);
