@@ -33,32 +33,60 @@ window.addEventListener("load", function () {
         `'Wo findet ${factorys[1].name} statt?'`
     ];
 
+  // production  two factories AB and two dates
+  artyom.addCommands({
+    description: "prod 2F2D ab",
+    indexes: [/(built|produced|production)  ?(.* ?)*factory [aAbB]( and |&)(the )?(other )?(factory )?[aAbB] ?(.* ?)*((January)|(February)|(March)|(April)|(May)|(June)|(July)|(August)|(September)|(October)|(November)|(December)|(this month))(.* ?)*((January)|(February)|(March)|(April)|(May)|(June)|(July)|(August)|(September)|(October)|(November)|(December)|(this month))/],
+    smart: true,
+    action: function (_i, _wildcard) {
+        console.log("prodution unings you want to see two factories a and b and two dates", _wildcard)
+    }
+});
+// production peaple and two factories AC and two dates
+artyom.addCommands({
+    description: "prod 2F2D ac",
+    indexes: [/(built|produced|production) ?(.* ?)*factory [aACc]( and |&)(the )?(other )?(factory )?[aACc] ?(.* ?)*((January)|(February)|(March)|(April)|(May)|(June)|(July)|(August)|(September)|(October)|(November)|(December)|(this month))(.* ?)*((January)|(February)|(March)|(April)|(May)|(June)|(July)|(August)|(September)|(October)|(November)|(December)|(this month))/],
+    smart: true,
+    action: function (_i, _wildcard) {
+        console.log("prodution unings you want to see two factories a and c and two dates", _wildcard)
+    }
+});
+
+//production AND two factories bc and two dates
+artyom.addCommands({
+    description: "prod 2F2D bc",
+    indexes: [/(built|produced|production) ?(.* ?)*factory [bBcC]( and |&)(the )?(other )?(factory )?[bBcC] ?(.* ?)*((January)|(February)|(March)|(April)|(May)|(June)|(July)|(August)|(September)|(October)|(November)|(December)|(this month))(.* ?)*((January)|(February)|(March)|(April)|(May)|(June)|(July)|(August)|(September)|(October)|(November)|(December)|(this month))/],
+    smart: true,
+    action: function (_i, _wildcard) {
+        console.log("prodution unings you want to see two factories b and c and two dates", _wildcard)
+    }
+});
 
 
 
     // two factories AB and two dates
     artyom.addCommands({
         description: "2F2D ab",
-        indexes: [/factory [aAbB]( and |&)(the )?(other )?(factory )?[aAbB]( from )?(the )?((January )|(February)|(March)|(April)|(May)|(June)|(July)|(August)|(September)|(October)|(November)|(December)|(this month))(.* ?)*((January )|(February)|(March)|(April)|(May)|(June)|(July)|(August)|(September)|(October)|(November)|(December)|(this month))/],
+        indexes: [/factory [aAbB]( and |&)(the )?(other )?(factory )?[aAbB] ?(.* ?)*((January)|(February)|(March)|(April)|(May)|(June)|(July)|(August)|(September)|(October)|(November)|(December)|(this month))(.* ?)*((January)|(February)|(March)|(April)|(May)|(June)|(July)|(August)|(September)|(October)|(November)|(December)|(this month))/],
         smart: true,
         action: function (_i, _wildcard) {
             console.log("you want to see two factories a and b and two dates", _wildcard)
         }
     });
-    // two factories AB and two dates
+    // two factories AC and two dates
     artyom.addCommands({
         description: "2F2D ac",
-        indexes: [/factory [aACc]( and |&)(the )?(other )?(factory )?[aACc]( from )?(the )?((January )|(February)|(March)|(April)|(May)|(June)|(July)|(August)|(September)|(October)|(November)|(December)|(this month))(.* ?)*((January )|(February)|(March)|(April)|(May)|(June)|(July)|(August)|(September)|(October)|(November)|(December)|(this month))/],
+        indexes: [/factory [aACc]( and |&)(the )?(other )?(factory )?[aACc] ?(.* ?)*((January)|(February)|(March)|(April)|(May)|(June)|(July)|(August)|(September)|(October)|(November)|(December)|(this month))(.* ?)*((January)|(February)|(March)|(April)|(May)|(June)|(July)|(August)|(September)|(October)|(November)|(December)|(this month))/],
         smart: true,
         action: function (_i, _wildcard) {
             console.log("you want to see two factories a and c and two dates", _wildcard)
         }
     });
 
-    // two factories AB and two dates
+    // two factories bc and two dates
     artyom.addCommands({
         description: "2F2D bc",
-        indexes: [/factory [bBcC]( and |&)(the )?(other )?(factory )?[bBcC]( from )?(the )?((January )|(February)|(March)|(April)|(May)|(June)|(July)|(August)|(September)|(October)|(November)|(December)|(this month))(.* ?)*((January )|(February)|(March)|(April)|(May)|(June)|(July)|(August)|(September)|(October)|(November)|(December)|(this month))/],
+        indexes: [/factory [bBcC]( and |&)(the )?(other )?(factory )?[bBcC] ?(.* ?)*((January)|(February)|(March)|(April)|(May)|(June)|(July)|(August)|(September)|(October)|(November)|(December)|(this month))(.* ?)*((January)|(February)|(March)|(April)|(May)|(June)|(July)|(August)|(September)|(October)|(November)|(December)|(this month))/],
         smart: true,
         action: function (_i, _wildcard) {
             console.log("you want to see two factories b and c and two dates", _wildcard)
@@ -69,7 +97,7 @@ window.addEventListener("load", function () {
      // two factories and one date
      artyom.addCommands({
         description: "2F1D a b",
-        indexes: [/factory [aAbB]( and |&)(the )?(other )?(factory )?[bBaA] (.* ?)*((January )|(February)|(March)|(April)|(May)|(June)|(July)|(August)|(this month)|(September)|(October)|(November)|(this month)|(December))/],
+        indexes: [/factory [aAbB]( and |&)(the )?(other )?(factory )?[bBaA] ?(.* ?)*((January)|(February)|(March)|(April)|(May)|(June)|(July)|(August)|(this month)|(September)|(October)|(November)|(this month)|(December))/],
         smart: true,
         action: function (_i, _wildcard) {
             console.log("you want to see two factories a b and one date", _wildcard)
@@ -78,7 +106,7 @@ window.addEventListener("load", function () {
       // two factories and one date
       artyom.addCommands({
         description: "2F1D a c",
-        indexes: [/factory [aAcC]( and |&)(the )?(other )?(factory )?[aAcC] (.* ?)*((January )|(February)|(March)|(April)|(May)|(June)|(July)|(August)|(this month)|(September)|(October)|(November)|(this month)|(December))/],
+        indexes: [/factory [aAcC]( and |&)(the )?(other )?(factory )?[aAcC] (.* ?)*((January)|(February)|(March)|(April)|(May)|(June)|(July)|(August)|(this month)|(September)|(October)|(November)|(this month)|(December))/],
         smart: true,
         action: function (_i, _wildcard) {
             console.log("you want to see two factories a c and one date", _wildcard)
@@ -87,7 +115,7 @@ window.addEventListener("load", function () {
       // two factories and one date
       artyom.addCommands({
         description: "2F1D b c",
-        indexes: [/factory [cCbB]( and |&)(the )?(other )?(factory )?[cCbB] (.* ?)*((January )|(February)|(March)|(April)|(May)|(June)|(July)|(August)|(this month)|(September)|(October)|(November)|(this month)|(December))/],
+        indexes: [/factory [cCbB]( and |&)(the )?(other )?(factory )?[cCbB] ?(.* ?)*((January)|(February)|(March)|(April)|(May)|(June)|(July)|(August)|(this month)|(September)|(October)|(November)|(this month)|(December))/],
         smart: true,
         action: function (_i, _wildcard) {
             console.log("you want to see two factories b c and one date", _wildcard)
@@ -126,7 +154,7 @@ window.addEventListener("load", function () {
       // two dates
       artyom.addCommands({
         description: "2D",
-        indexes: [/((January )|(February)|(March)|(April)|(May)|(June)|(July)|(August)|(September)|(October)|(November)|(December))(.* ?)*((January )|(February)|(this month)|(March)|(April)|(May)|(June)|(July)|(August)|(September)|(October)|(November)|(this month)|(December))/],
+        indexes: [/((January)|(February)|(March)|(April)|(May)|(June)|(July)|(August)|(September)|(October)|(November)|(December))(.* ?)*((January)|(February)|(this month)|(March)|(April)|(May)|(June)|(July)|(August)|(September)|(October)|(November)|(this month)|(December))/],
         smart: true,
         action: function (_i, _wildcard) {
             console.log("you want to see two dates", _wildcard)
