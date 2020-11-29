@@ -21,7 +21,7 @@ window.addEventListener("load", function () {
     
 
       // production  two factories AB and two dates
-      artyom.addCommands({
+    artyom.addCommands({
         description: "wild",
         indexes: [/reset/],
         smart: true,
@@ -31,16 +31,15 @@ window.addEventListener("load", function () {
         }
     });
       
-  artyom.addCommands({
-    description: "wild",
-    indexes: ["*"],
-    smart: true,
-    action: function (_i, _wildcard) {
-
-        console.log("WILDCARD", _wildcard)
-        wildhandler(_wildcard);
-    }
-});
+    artyom.addCommands({
+        description: "wild",
+        indexes: ["*"],
+        smart: true,
+        action: function (_i, _wildcard) {
+            console.log("WILDCARD", _wildcard)
+            wildhandler(_wildcard);
+        }
+    });
 
 
 
@@ -77,45 +76,30 @@ window.addEventListener("load", function () {
             one_date = null;
             artyom.say("Allright, lets start from the beginning, what you want to know?");
     }
+
     function wildhandler(_wildcard) {
         if (a == null){
-            console.log("update d");
-
             a = _wildcard.match(/((factory|plant|company) [aA]|&[aA]|and [aA]|[aA]&|np [aA])/);
         }
         if (b == null){
-            console.log("update b");
-
             b = _wildcard.match(/((factory|plant|company) [bB]|&[bB]|and [bB]|[bB]&|np [bB])/);
         }
         if (c == null){
-            console.log("update c");
-
             c = _wildcard.match(/((factory|plant|company) [cC]|&[cC]|and [cC]|[cC]&|np [cC])/);
         }
         if (production == null){
-            console.log("update production");
-
             production = _wildcard.match(/(production|produced|built|products)/);
         }
         if (sick == null){
-            console.log("update sick");
-
             sick = _wildcard.match(/(sick|ill|at home|not at work)/);
         }
         if (wearing == null){
-            console.log("update wearing");
-
             wearing = _wildcard.match(/(wearing)/);
         }
-
         if (two_dates == null){
-            console.log("update two dates");
             two_dates = _wildcard.match(/((january)|(february)|(march)|(april)|(May)|(june)|(july)|(august)|(september)|(october)|(november)|(december)|(this month)) ?(.* ?)* ?((january)|(february)|(march)|(april)|(May)|(june)|(july)|(august)|(september)|(october)|(november)|(december)|(this month))/);
         }
         if (one_date == null){
-            console.log("update one datessss");
-
             one_date = _wildcard.match(/(january|february|march|april|may|june|july|august|september|october|november|december|this month)/);
         }
 
@@ -127,7 +111,6 @@ window.addEventListener("load", function () {
         console.log(wearing && true);
         console.log(two_dates && true);
         console.log(one_date && true);
-
 
         let counter = 0;
         stack = [];
@@ -144,8 +127,6 @@ window.addEventListener("load", function () {
             counter = counter + 1;
             stack.push("C");
         }
-
-
 
         inner_stack = [];
         inner_counter = 0;
@@ -164,8 +145,6 @@ window.addEventListener("load", function () {
         }
 
 
-
-
         if ( !a && !b && !c && !production && !sick && !wearing && !two_dates && !one_date  ){
             artyom.say("Please ask for factory a,b or and for production units, sick people or waring parts and for one or two dates");
             return 0;
@@ -182,7 +161,6 @@ window.addEventListener("load", function () {
         if (!two_dates){
             if (one_date){
                 artyom.say("For the specific date ");
-
             }else{
                 artyom.say("Today ");
 
@@ -219,7 +197,7 @@ window.addEventListener("load", function () {
 
               if (i != s_l-2){
                 artyom.say(" and ");
-
+              }
         } else {
 
 
@@ -248,7 +226,7 @@ window.addEventListener("load", function () {
 
                 for (i = 0; i < s_l; i++) {
                     artyom.say(" for Factory " + temp_stack.pop() + " is" + getRandomInt(-50,50));
-                  } 
+                } 
             }
         }
         reset();
@@ -271,89 +249,5 @@ window.addEventListener("load", function () {
         max = Math.floor(max);
         return Math.floor(Math.random() * (max - min + 1)) + min;
     }
-  /*
-    function promptfactorys(_mentionedfactorys, _factoryFound = true) {
-        let unmentionedfactorys = factorys.filter(_value => !_mentionedfactorys.includes(_value));
-        let suggestion;
-        let question;
-        if (unmentionedfactorys.length > 0) {
-            suggestion = suggestions1.pop();
-            question = `Du hast noch ${unmentionedfactorys.length == 1 ? "einen weiteren Termin" : (unmentionedfactorys.length + " weitere Termine")}. Wenn du wissen willst was du noch vor hast `;
-        }
-        else {
-            suggestion = suggestions2.pop();
-            question = `${_factoryFound ? "" : "Das habe ich nicht Verstanden."} Wenn du genauere Informationen zu deinen Terminen haben willst `;
-        }
-        if (suggestion) {
-            question += `sag zum Beispiel ${suggestion}.`;
-        }
-        else {
-            question += "frag einfach nach. ";
-            if (unmentionedfactorys.length == 0)
-                question += "Wenn du nichts mehr Wissen willst sag einfach Stop";
-        }
-        artyom.newPrompt({
-            question: question,
-            smart: true,
-            options: [
-                /nächster Termin/,
-                /((sonst noch)|(sonst)|(noch) vor)|(weiteren|anderen Termine)/,
-                "* Termin",
-                "Wo *",
-                "Wann *",
-                /^[Ss]topp?$/
-            ],
-            onMatch: (_index, _wildcard) => {
-                switch (_index) {
-                    case 0:
-                        _mentionedfactorys.push(unmentionedfactorys[0]);
-                        return () => {
-                            listFactoryDetailed(unmentionedfactorys[0]);
-                            promptfactorys(_mentionedfactorys);
-                        };
-                    case 1:
-                        return () => {
-                            artyom.say("Deine anderen Termine lauten: ");
-                            listFactorys(unmentionedfactorys, _mentionedfactorys);
-                        };
-                    case 2:
-                        return () => appointmentByCounter(_wildcard, _mentionedfactorys);
-                    case 3:
-                    case 4:
-                        let askedAppointment;
-                        for (const key in factorysByName) {
-                            let match = _wildcard.match(key.toLocaleLowerCase());
-                            if (match) {
-                                console.log(match);
-                                askedAppointment = factorysByName[key];
-                                break;
-                            }
-                        }
-                        if (askedAppointment) {
-                            _mentionedfactorys.push(askedAppointment);
-                            return () => {
-                                artyom.say(`Dein Termin ${askedAppointment.name} findet ${_index == 3 ? `in ${askedAppointment.location}` : `um ${askedAppointment.time} Uhr`} statt`);
-                                promptfactorys(_mentionedfactorys);
-                            };
-                        }
-                        else {
-                            return () => {
-                                promptfactorys(_mentionedfactorys, false);
-                            };
-                        }
-                    default:
-                        return () => {
-                            artyom.say("Okay ich hoffe ich konnte dir behilflich sein");
-                        };
-                }
-            }
-        });
-    }
-    function mapfactorys() {
-        factorysByName = {};
-        for (const facto of factorys) {
-            factorysByName[facto.name] = facto;
-        }
-    }*/
+  
 });
-//# sourceMappingURL=artyom-script.js.map
