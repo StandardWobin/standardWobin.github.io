@@ -192,9 +192,9 @@ window.addEventListener("load", function () {
                 stack.push("C");
             }
             if (inner_counter == 0){
-                stack.push("the amount of produced units");
-                stack.push("the amount of sick people");
-                stack.push("the amount of broken wearing parts");
+                inner_stack.push("the amount of produced units");
+                inner_stack.push("the amount of sick people");
+                inner_stack.push("the amount of broken wearing parts");
             }
 
 
