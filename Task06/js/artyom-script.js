@@ -44,7 +44,6 @@ window.addEventListener("load", function () {
 
 
 
-    mapfactorys();
     document.getElementById("start").addEventListener("click", start);
     function start() {
         artyom.fatality();
