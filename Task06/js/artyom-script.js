@@ -16,10 +16,7 @@ window.addEventListener("load", function () {
         "'Wie lautet mein dritter Termin'",
         "'Wie lautet mein nächster Termin'"
     ];
-    let suggestions2 = [
-        `'Wann findet ${factorys[0].name} statt?'`,
-        `'Wo findet ${factorys[1].name} statt?'`
-    ];
+
 
     
 
@@ -206,7 +203,7 @@ window.addEventListener("load", function () {
         max = Math.floor(max);
         return Math.floor(Math.random() * (max - min + 1)) + min;
     }
-  
+  /*
     function promptfactorys(_mentionedfactorys, _factoryFound = true) {
         let unmentionedfactorys = factorys.filter(_value => !_mentionedfactorys.includes(_value));
         let suggestion;
@@ -290,5 +287,5 @@ window.addEventListener("load", function () {
             factorysByName[facto.name] = facto;
         }
     }
-});
+});*/
 //# sourceMappingURL=artyom-script.js.map
