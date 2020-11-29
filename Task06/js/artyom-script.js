@@ -79,13 +79,13 @@ window.addEventListener("load", function () {
 
     function wildhandler(_wildcard) {
         if (a == null){
-            a = _wildcard.match(/(factory|plant|company) [aA]|&[aA]|and [aA]|[aA]&|np [aA])/);
+            a = _wildcard.match(/((factory|plant|company) [aA]|&[aA]|and [aA]|[aA]&|np [aA])/);
         }
         if (b == null){
-            b = _wildcard.match(/(factory|plant|company) [bB]|&[bB]|and [bB]|[bB]&|np [bB]| [bB] )/);
+            b = _wildcard.match(/((factory|plant|company) [bB]|&[bB]|and [bB]|[bB]&|np [bB]| [bB] )/);
         }
         if (c == null){
-            c = _wildcard.match(/(factory|plant|company) [cC]|&[cC]|and [cC]|[cC]&|np [cC]| [cC] )/);
+            c = _wildcard.match(/((factory|plant|company) [cC]|&[cC]|and [cC]|[cC]&|np [cC]| [cC] )/);
         }
         if (production == null){
             production = _wildcard.match(/(production|produced|built|products)/);
