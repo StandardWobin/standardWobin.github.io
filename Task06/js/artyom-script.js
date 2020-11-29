@@ -29,8 +29,7 @@ window.addEventListener("load", function () {
         indexes: ["reset"],
         smart: true,
         action: function (_i, _wildcard) {
-    
-            releaseEvents.log("RESET", _wildcard)
+            console.log("reset");
             reset();
         }
     });
