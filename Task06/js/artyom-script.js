@@ -1,28 +1,16 @@
 window.addEventListener("load", function () {
     const artyom = new Artyom();
-    let factorys = [
-        {
-            name: "A",
-            sick: "9",
-            production: "234",
-            date: "12.12.2020"
-        },
-        {
-            name: "B",
-            sick: "12",
-            production: "234324",
-            date: "12.12.2020"
 
-        },
-        {
-            name: "C",
-            sick: "15",
-            production: "234324",
-            date: "12.12.2020"
+    let a;
+    let b;
+    let c;
+    let production;
+    let sick;
+    let wearing;
+    let one_date;
+    let two_dates;
 
-        }    
-    ];
-    let factorysByName;
+
     let suggestions1 = [
         "'Was habe ich noch vor'",
         "'Wie lautet mein dritter Termin'",
@@ -33,8 +21,20 @@ window.addEventListener("load", function () {
         `'Wo findet ${factorys[1].name} statt?'`
     ];
 
+    
 
       // production  two factories AB and two dates
+      artyom.addCommands({
+        description: "wild",
+        indexes: ["reset"],
+        smart: true,
+        action: function (_i, _wildcard) {
+    
+            releaseEvents.log("RESET", _wildcard)
+            reset();
+        }
+    });
+      
   artyom.addCommands({
     description: "wild",
     indexes: ["*"],
@@ -70,36 +70,43 @@ window.addEventListener("load", function () {
              });
         }, 250);
     }
-    function listFactorys(_unmentionedfactorys, _mentionedfactorys = []) {
-        console.log(_unmentionedfactorys);
-        for (const appointment of _unmentionedfactorys) {
-            _mentionedfactorys.push(appointment);
-            listFactory(appointment);
-        }
-        promptfactorys(_mentionedfactorys);
-    }
-    function listFactory(_factory) {
-        artyom.say("In factory " + _factory.name + " there are " + _factory.sick + " people sick and " + _factory.production + " parts has been done today");
-    }
-    function listFactoryDetailed(_factory, time = true, location = true) {
-        artyom.say(_factory.name);
-        artyom.say("um " + _factory.time + " Uhr");
-        artyom.say("in " + _factory.location);
-    }
 
+    function reset(_wildcard) {
+            a = null
+            b = null
+            c = null
+            sick = null
+            wearing = null
+            two_dates = null
+            one_date = null
+            artyom.say("Allright, lets start from the beginning, what you want to know?");
+    }
     function wildhandler(_wildcard) {
-        let a = _wildcard.match(/((factory|plant|company) [aA]|&[aA]|and [aA]|[aA]&|np [aA])/);
-        let b = _wildcard.match(/((factory|plant|company) [bB]|&[bB]|and [bB]|[bB]&|np [bB])/);
-        let c = _wildcard.match(/((factory|plant|company) [cC]|&[cC]|and [cC]|[cC]&|np [cC])/);
+        if (a == null){
+            a = _wildcard.match(/((factory|plant|company) [aA]|&[aA]|and [aA]|[aA]&|np [aA])/);
+        }
+        if (b == null){
+            b = _wildcard.match(/((factory|plant|company) [bB]|&[bB]|and [bB]|[bB]&|np [bB])/);
+        }
+        if (c == null){
+            c = _wildcard.match(/((factory|plant|company) [cC]|&[cC]|and [cC]|[cC]&|np [cC])/);
+        }
+        if (production == null){
+            production = _wildcard.match(/(production|produced|built|products)/);
+        }
+        if (sick == null){
+            sick = _wildcard.match(/(sick|ill|at home|not at work)/);
+        }
+        if (wearing == null){
+            wearing = _wildcard.match(/(waring)/);
+        }
 
-        let production = _wildcar.match(/(production|produced|built|products)/);
-        let sick = _wildcar.match(/(sick|ill|at home|not at work)/);
-        let wearing = _wildcar.match(/(waring)/);
-
-
-        let two_dates = _wildcar.match(/((January)|(February)|(March)|(April)|(May)|(June)|(July)|(August)|(September)|(October)|(November)|(December)|(this month))(.* ?)*((January)|(February)|(March)|(April)|(May)|(June)|(July)|(August)|(September)|(October)|(November)|(December)|(this month))/);
-        let one_date = _wildcar.match(/((January)|(February)|(March)|(April)|(May)|(June)|(July)|(August)|(September)|(October)|(November)|(December)|(this month))/);
-
+        if (two_dates == null){
+            two_dates = _wildcar.match(/((January)|(February)|(March)|(April)|(May)|(June)|(July)|(August)|(September)|(October)|(November)|(December)|(this month))(.* ?)*((January)|(February)|(March)|(April)|(May)|(June)|(July)|(August)|(September)|(October)|(November)|(December)|(this month))/);
+        }
+        if (one_date == null){
+            one_date = _wildcar.match(/((January)|(February)|(March)|(April)|(May)|(June)|(July)|(August)|(September)|(October)|(November)|(December)|(this month))/);
+        }
 
         console.log(a && true);
         console.log(b && true);
@@ -111,51 +118,96 @@ window.addEventListener("load", function () {
         console.log(one_date && true);
 
 
+        let counter = 0;
+        stack = [];
+        if (a){
+            counter = counter + 1;
+            stack.push("A");
+        }
+        if (b){
+            counter = counter + 1;
+            stack.push("B");
+        }
+
+        if (c){
+            counter = counter + 1;
+            stack.push("C");
+        }
+
+
+
+        inner_stack = [];
+        inner_counter = 0;
+        if (production){
+            inner_counter = inner_counter + 1;
+            inner_stack.push("the amount of produced units");
+        }
+        if (sick){
+            inner_counter = inner_counter + 1;
+            inner_stack.push("the amount of sick people");
+        }
+
+        if (wearing){
+            inner_counter = inner_counter + 1;
+            inner_stack.push("the amount of wearing parts");
+        }
+
+
+
+
+        if ( !a && !b && !c && !production && !sick && !wearing && !two_dates && !one_date  ){
+            artyom.say("Everything works fine");
+        }
+
+        if ( a && b && c ){
+            artyom.say("It is not allowed to compare three factories");
+        }
+
+
+        // PASS
+        if (one_date && !two_dates){
+            artyom.say("For the specific date");
+            let s_l =stack.length;
+            for (i = 0; i < s_l; i++) {
+                artyom.say("Factory " + stack.pop());
+
+                let inner_s_l =inner_stack.length;
+                let temp_stack = inner_stack;
+                for (j = 0; j < inner_s_l; j++) {
+                    artyom.say(temp_stack.pop() + " is " + getRandomInt(5,5000));
+
+                    if (j != inner_s_l-1){
+                        artyom.say("and");
+
+                    }
+              } 
+
+              if (i != s_l-1){
+                artyom.say("and");
+            }
+
+
+        }
+
+
+       
+
+        }
+
+       
+
+
+
+
 
     }
-    function appointmentByCounter(_wildcard, _mentionedfactorys = []) {
-        let askedAppointment;
-        let appointmentNumber;
-        let appointmentCounter = [
-            "erster",
-            "zweiter",
-            "dritter",
-            "vierter",
-            "fünfter",
-            "sechster",
-            "siebter",
-            "achter",
-            "neunter",
-            "zehnter"
-        ];
-        for (const key in appointmentCounter) {
-            if (_wildcard.match(appointmentCounter[key])) {
-                appointmentNumber = appointmentCounter[key];
-                askedAppointment = factorys[key];
-                break;
-            }
-        }
-        if (!askedAppointment) {
-            if (_wildcard.match("letzter")) {
-                appointmentNumber = "letzter";
-                askedAppointment = factorys[factorys.length - 1];
-            }
-            else if (appointmentNumber) {
-                artyom.say(`Ein ${appointmentNumber} Termin steht heute nicht auf dem Plan`);
-                promptfactorys(_mentionedfactorys);
-                return;
-            }
-        }
-        if (askedAppointment) {
-            _mentionedfactorys.push(askedAppointment);
-            artyom.say(`Dein ${appointmentNumber} Termin lautet: `);
-            listFactoryDetailed(askedAppointment);
-        }
-        else {
-            artyom.say("Das habe ich nicht Verstanden.");
-        }
-        promptfactorys(_mentionedfactorys);
+
+    function getRandomInt(min, max) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min + 1)) + min;
     }
+  
     function promptfactorys(_mentionedfactorys, _factoryFound = true) {
         let unmentionedfactorys = factorys.filter(_value => !_mentionedfactorys.includes(_value));
         let suggestion;
