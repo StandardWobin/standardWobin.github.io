@@ -116,7 +116,7 @@ window.addEventListener("load", function () {
         if (one_date == null){
             console.log("update one dates");
 
-            one_date = _wildcard.match(/(January|February|March|April|May|June|July|August|September|October|November|December|this month)/);
+            one_date = _wildcard.match(/(January|February|March|April|May|june|July|August|September|October|November|December|this month)/);
         }
 
         console.log(a && true);
