@@ -67,39 +67,55 @@ window.addEventListener("load", function () {
     }
 
     function reset(_wildcard) {
-            a = null
-            b = null
-            c = null
-            sick = null
-            wearing = null
-            two_dates = null
-            one_date = null
+            a = null;
+            b = null;
+            c = null;
+            sick = null;
+            production = null;
+            wearing = null;
+            two_dates = null;
+            one_date = null;
             artyom.say("Allright, lets start from the beginning, what you want to know?");
     }
     function wildhandler(_wildcard) {
         if (a == null){
+            console.log("update d");
+
             a = _wildcard.match(/((factory|plant|company) [aA]|&[aA]|and [aA]|[aA]&|np [aA])/);
         }
         if (b == null){
+            console.log("update b");
+
             b = _wildcard.match(/((factory|plant|company) [bB]|&[bB]|and [bB]|[bB]&|np [bB])/);
         }
         if (c == null){
+            console.log("update c");
+
             c = _wildcard.match(/((factory|plant|company) [cC]|&[cC]|and [cC]|[cC]&|np [cC])/);
         }
         if (production == null){
+            console.log("update production");
+
             production = _wildcard.match(/(production|produced|built|products)/);
         }
         if (sick == null){
+            console.log("update sick");
+
             sick = _wildcard.match(/(sick|ill|at home|not at work)/);
         }
         if (wearing == null){
+            console.log("update wearing");
+
             wearing = _wildcard.match(/(wearing)/);
         }
 
         if (two_dates == null){
+            console.log("update two dates");
             two_dates = _wildcard.match(/((January)|(February)|(March)|(April)|(May)|(June)|(July)|(August)|(September)|(October)|(November)|(December)|(this month)) ?(.* ?)* ?((January)|(February)|(March)|(April)|(May)|(June)|(July)|(August)|(September)|(October)|(November)|(December)|(this month))/);
         }
         if (one_date == null){
+            console.log("update one dates");
+
             one_date = _wildcard.match(/((January)|(February)|(March)|(April)|(May)|(June)|(July)|(August)|(September)|(October)|(November)|(December)|(this month))/);
         }
 
