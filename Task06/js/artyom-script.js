@@ -11,13 +11,6 @@ window.addEventListener("load", function () {
     let two_dates;
 
 
-    let suggestions1 = [
-        "'Was habe ich noch vor'",
-        "'Wie lautet mein dritter Termin'",
-        "'Wie lautet mein nächster Termin'"
-    ];
-
-
     
 
       // production  two factories AB and two dates
@@ -58,8 +51,8 @@ window.addEventListener("load", function () {
                 artyom.sayRandom([
                     "Good Morning",
                     "Hey, good to see you again",
-                    "Hello, I don't have anything to say today",
-                    "Hey, Did you remember that I didn't say nothing yesterday? Well, today I dont want neither."
+                    "Hey, good to have you here",
+                    "Hello, how can i help?"
                 ]);
              });
         }, 250);
@@ -74,7 +67,7 @@ window.addEventListener("load", function () {
             wearing = null;
             two_dates = null;
             one_date = null;
-            artyom.sayRandom(["Allright, can I help you with something else", "I hope this was helpful, what else can i do you four?", "feel free to ask another question"]);
+            artyom.sayRandom(["Allright, can I help you with something else", "I hope this was helpful, what else can i do you four?", "feel free to ask another question", "thank you for traveling with deusche bahn"]);
     }
 
     function wildhandler(_wildcard) {
@@ -128,20 +121,24 @@ window.addEventListener("load", function () {
 
         let counter = 0;
         stack = [];
-        if (a){
-            counter = counter + 1;
-            stack.push("A");
-        }
-        if (b){
-            counter = counter + 1;
-            stack.push("B");
-        }
 
         if (c){
             counter = counter + 1;
             stack.push("C");
         }
 
+        if (b){
+            counter = counter + 1;
+            stack.push("B");
+        }
+
+        if (a){
+            counter = counter + 1;
+            stack.push("A");
+        }
+   
+
+   
         inner_stack = [];
         inner_counter = 0;
         if (production){
@@ -241,7 +238,7 @@ window.addEventListener("load", function () {
                 let s_l =temp_stack.length;
 
                 for (i = 0; i < s_l; i++) {
-                    artyom.say(" for Factory " + temp_stack.pop() + " is " + get_half_times_a_minus_string() + " " + getRandomInt(-50,50) + " " + get_half_times_a_percent_string() + ".");
+                    artyom.say(" for Factory " + temp_stack.pop() + " is " + getRandomInt(-50,50) + " " + get_half_times_a_percent_string() + ".");
                 } 
             }
         }
@@ -249,15 +246,6 @@ window.addEventListener("load", function () {
     }
 
 
-    function get_half_times_a_minus_string(){
-
-        if (getRandomInt(0,100) < 50){
-            return "minus"
-        }
-        else{
-            return ""
-        }
-    }
 
     function get_half_times_a_percent_string(){
 

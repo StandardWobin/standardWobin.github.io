@@ -33,6 +33,9 @@ Demo of big screen:
 1. VUI Storyline -> [click](/fith.md)
 
 ### TASK 06
+WITH THE SETTING OF TASK 3,4
+1. VUI -> [click](/Task06/index.html)
+
 ### TASK 07
 ### TASK 08
 ### TASK 09
@@ -48,7 +51,6 @@ Demo of big screen:
 ### TASK 12
 
 ### NOT DONE YET
-1. VUI -> [click](/Task06/index.html)
 
 
 
