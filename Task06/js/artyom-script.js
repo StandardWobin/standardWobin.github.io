@@ -81,27 +81,41 @@ window.addEventListener("load", function () {
         if (a == null){
             a = _wildcard.match(/((factory|plant|company) [aA]|&[aA]|and [aA]|[aA]&|np [aA])/);
         }
+        console.log("one");
         if (b == null){
             b = _wildcard.match(/((factory|plant|company) [bB]|&[bB]|and [bB]|[bB]&|np [bB]| [bB] )/);
         }
+        console.log("two");
         if (c == null){
             c = _wildcard.match(/((factory|plant|company) [cC]|&[cC]|and [cC]|[cC]&|np [cC]| [cC] )/);
         }
+        console.log("three");
+
         if (production == null){
             production = _wildcard.match(/(production|produced|built|products)/);
         }
+        console.log("four");
+
         if (sick == null){
             sick = _wildcard.match(/(sick|ill|at home|not at work)/);
         }
+        console.log("five");
+
         if (wearing == null){
             wearing = _wildcard.match(/(wearing)/);
         }
+        console.log("six");
+
         if (two_dates == null){
             two_dates = _wildcard.match(/((january)|(february)|(march)|(april)|(May)|(june)|(july)|(august)|(september)|(october)|(november)|(december)|(this month)) ?(.* ?)* ?((january)|(february)|(march)|(april)|(May)|(june)|(july)|(august)|(september)|(october)|(november)|(december)|(this month))/);
         }
+        console.log("seven");
+
         if (one_date == null){
             one_date = _wildcard.match(/(january|february|march|april|may|june|july|august|september|october|november|december|this month)/);
         }
+        console.log("eight");
+
 
         console.log(a && true);
         console.log(b && true);
