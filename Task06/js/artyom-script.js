@@ -2,19 +2,24 @@ window.addEventListener("load", function () {
     const artyom = new Artyom();
     let factorys = [
         {
-            name: "Vorlesung",
+            name: "A",
             sick: "9",
-            production: "234"
+            production: "234",
+            date: "12.12.2020"
         },
         {
-            name: "Meeting",
+            name: "B",
             sick: "12",
-            production: "234324"
+            production: "234324",
+            date: "12.12.2020"
+
         },
         {
-            name: "Treffen mit Paul",
+            name: "C",
             sick: "15",
-            production: "234324"
+            production: "234324",
+            date: "12.12.2020"
+
         }    
     ];
     let factorysByName;
@@ -31,25 +36,110 @@ window.addEventListener("load", function () {
 
 
 
-
-
-
+    // two factories AB and two dates
     artyom.addCommands({
-        description: "appointment X",
-        indexes: [/factory [abcABC]( and |&)(the )?(other )?(factory )?[abcABC]/],
+        description: "2F2D ab",
+        indexes: [/factory [aAbB]( and |&)(the )?(other )?(factory )?[aAbB]( from )?(the )?((January )|(February)|(March)|(April)|(May)|(June)|(July)|(August)|(September)|(October)|(November)|(December)|(this month))(.* ?)*((January )|(February)|(March)|(April)|(May)|(June)|(July)|(August)|(September)|(October)|(November)|(December)|(this month))/],
         smart: true,
         action: function (_i, _wildcard) {
-            console.log("you want to see two factories", _wildcard)
+            console.log("you want to see two factories a and b and two dates", _wildcard)
+        }
+    });
+    // two factories AB and two dates
+    artyom.addCommands({
+        description: "2F2D ac",
+        indexes: [/factory [aACc]( and |&)(the )?(other )?(factory )?[aACc]( from )?(the )?((January )|(February)|(March)|(April)|(May)|(June)|(July)|(August)|(September)|(October)|(November)|(December)|(this month))(.* ?)*((January )|(February)|(March)|(April)|(May)|(June)|(July)|(August)|(September)|(October)|(November)|(December)|(this month))/],
+        smart: true,
+        action: function (_i, _wildcard) {
+            console.log("you want to see two factories a and c and two dates", _wildcard)
         }
     });
 
-
+    // two factories AB and two dates
     artyom.addCommands({
-        description: "appointment Xoteer",
-        indexes: [/factory [abc]/],
+        description: "2F2D bc",
+        indexes: [/factory [bBcC]( and |&)(the )?(other )?(factory )?[bBcC]( from )?(the )?((January )|(February)|(March)|(April)|(May)|(June)|(July)|(August)|(September)|(October)|(November)|(December)|(this month))(.* ?)*((January )|(February)|(March)|(April)|(May)|(June)|(July)|(August)|(September)|(October)|(November)|(December)|(this month))/],
         smart: true,
         action: function (_i, _wildcard) {
-            console.log("asdasd", _wildcard)
+            console.log("you want to see two factories b and c and two dates", _wildcard)
+        }
+    });
+    
+
+     // two factories and one date
+     artyom.addCommands({
+        description: "2F1D a b",
+        indexes: [/factory [aAbB]( and |&)(the )?(other )?(factory )?[bBaA] (.* ?)*((January )|(February)|(March)|(April)|(May)|(June)|(July)|(August)|(this month)|(September)|(October)|(November)|(this month)|(December))/],
+        smart: true,
+        action: function (_i, _wildcard) {
+            console.log("you want to see two factories a b and one date", _wildcard)
+        }
+    });
+      // two factories and one date
+      artyom.addCommands({
+        description: "2F1D a c",
+        indexes: [/factory [aAcC]( and |&)(the )?(other )?(factory )?[aAcC] (.* ?)*((January )|(February)|(March)|(April)|(May)|(June)|(July)|(August)|(this month)|(September)|(October)|(November)|(this month)|(December))/],
+        smart: true,
+        action: function (_i, _wildcard) {
+            console.log("you want to see two factories a c and one date", _wildcard)
+        }
+    });
+      // two factories and one date
+      artyom.addCommands({
+        description: "2F1D b c",
+        indexes: [/factory [cCbB]( and |&)(the )?(other )?(factory )?[cCbB] (.* ?)*((January )|(February)|(March)|(April)|(May)|(June)|(July)|(August)|(this month)|(September)|(October)|(November)|(this month)|(December))/],
+        smart: true,
+        action: function (_i, _wildcard) {
+            console.log("you want to see two factories b c and one date", _wildcard)
+        }
+    });
+
+   
+    // two factories
+    artyom.addCommands({
+        description: "2F a b",
+        indexes: [/factory [aAbB]( and |&)(the )?(other )?(factory )?[aAbB]/],
+        smart: true,
+        action: function (_i, _wildcard) {
+            console.log("you want to see two factories a b", _wildcard)
+        }
+    });
+    // two factories
+    artyom.addCommands({
+        description: "2F a c",
+        indexes: [/factory [aAcC]( and |&)(the )?(other )?(factory )?[aAcC]/],
+        smart: true,
+        action: function (_i, _wildcard) {
+            console.log("you want to see two factories a c", _wildcard)
+        }
+    });
+    // two factories
+    artyom.addCommands({
+        description: "2F b c",
+        indexes: [/factory [bBcC]( and |&)(the )?(other )?(factory )?[bBcC]/],
+        smart: true,
+        action: function (_i, _wildcard) {
+            console.log("you want to see two factories b c", _wildcard)
+        }
+    });
+
+      // two dates
+      artyom.addCommands({
+        description: "2D",
+        indexes: [/((January )|(February)|(March)|(April)|(May)|(June)|(July)|(August)|(September)|(October)|(November)|(December))(.* ?)*((January )|(February)|(this month)|(March)|(April)|(May)|(June)|(July)|(August)|(September)|(October)|(November)|(this month)|(December))/],
+        smart: true,
+        action: function (_i, _wildcard) {
+            console.log("you want to see two dates", _wildcard)
+        }
+    });
+
+    
+    artyom.addCommands({
+        description: "overview",
+        indexes: [/overview/, /everything/],
+        smart: true,
+        action: function (_i, _wildcard) {
+            console.log("overview", _wildcard)
         }
     });
 
