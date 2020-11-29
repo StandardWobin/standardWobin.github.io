@@ -107,7 +107,7 @@ window.addEventListener("load", function () {
         console.log("six");
 
         if (two_dates == null){
-            two_dates = _wildcard.match(/((january)|(february)|(march)|(april)|(May)|(june)|(july)|(august)|(september)|(october)|(november)|(december)|(this month)) ?(.* ?)* ?((january)|(february)|(march)|(april)|(May)|(june)|(july)|(august)|(september)|(october)|(november)|(december)|(this month))/);
+            two_dates = _wildcard.match(/((january)|(february)|(march)|(april)|(may)|(june)|(july)|(august)|(september)|(october)|(november)|(december)|(this month)) ?(.* ?) ?((january)|(february)|(march)|(april)|(may)|(june)|(july)|(august)|(september)|(october)|(november)|(december)|(this month))/);
         }
         console.log("seven");
 
