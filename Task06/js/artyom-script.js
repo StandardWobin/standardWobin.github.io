@@ -176,8 +176,14 @@ window.addEventListener("load", function () {
 
 
         // PASS
-        if (one_date && !two_dates){
-            artyom.say("For the specific date");
+        if (!two_dates){
+            if (one_date){
+                artyom.say("For the specific date ");
+
+            }else{
+                artyom.say("Today ");
+
+            }
 
             // nothiing wanted? so all said
             if (counter == 0){
