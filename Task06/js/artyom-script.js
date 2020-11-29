@@ -151,16 +151,16 @@ window.addEventListener("load", function () {
         inner_counter = 0;
         if (production){
             inner_counter = inner_counter + 1;
-            inner_stack.push("the amount of produced units");
+            inner_stack.push("produced units");
         }
         if (sick){
             inner_counter = inner_counter + 1;
-            inner_stack.push("the amount of sick people");
+            inner_stack.push("sick people");
         }
 
         if (wearing){
             inner_counter = inner_counter + 1;
-            inner_stack.push("the amount of wearing parts");
+            inner_stack.push("wearing parts");
         }
 
 
@@ -195,9 +195,9 @@ window.addEventListener("load", function () {
                 stack.push("C");
             }
             if (inner_counter == 0){
-                inner_stack.push("the amount of produced units");
-                inner_stack.push("the amount of sick people");
-                inner_stack.push("the amount of broken wearing parts");
+                inner_stack.push("produced units");
+                inner_stack.push("sick people");
+                inner_stack.push("broken wearing parts");
             }
 
 
@@ -209,9 +209,9 @@ window.addEventListener("load", function () {
                 let temp_stack = deepcopy(inner_stack);
                 for (j = 0; j < inner_s_l; j++) {
                     if (j != inner_s_l-1){
-                        artyom.say(temp_stack.pop() + " is " + getRandomInt(5,5000) + " and ");
+                        artyom.say("the amount of " + temp_stack.pop() + " is " + getRandomInt(5,5000) + " and ");
                     } else{
-                        artyom.say(temp_stack.pop() + " is " + getRandomInt(5,5000));
+                        artyom.say("the amount of " + temp_stack.pop() + " is " + getRandomInt(5,5000));
                     }
 
                     }
@@ -220,20 +220,38 @@ window.addEventListener("load", function () {
               if (i != s_l-2){
                 artyom.say(" and ");
 
+        } else {
 
+
+            artyom.say("Between these two dates ");
+            // nothiing wanted? so all said
+            if (counter == 0){
+                stack.push("A");
+                stack.push("B");
+                stack.push("C");
+            }
+            if (inner_counter == 0){
+                inner_stack.push("produced units");
+                inner_stack.push("sick people");
+                inner_stack.push("broken wearing parts");
+            }
+
+
+            let inner_s_l =inner_stack.length;
+
+            for (j = 0; j < inner_s_l; j++) {
+                artyom.say("the difference for " + temp_stack.pop());
+                
+                let temp_stack = deepcopy(stack);
+
+                let s_l =temp_stack.length;
+
+                for (i = 0; i < s_l; i++) {
+                    artyom.say(" for Factory " + temp_stack.pop() + " is" + getRandomInt(-50,50));
+                  } 
+            }
         }
-
-
-       
-
-        
-
-       
-
-
-
-
-
+        reset();
     }
 
 
