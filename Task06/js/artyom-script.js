@@ -74,7 +74,7 @@ window.addEventListener("load", function () {
             wearing = null;
             two_dates = null;
             one_date = null;
-            artyom.say("Allright, lets start from the beginning, what you want to know?");
+            artyom.sayRandom(["Allright, can I help you with something else", "I hope this was helpful, what else can i do you four?", "feel free to ask another question"]);
     }
 
     function wildhandler(_wildcard) {
@@ -151,7 +151,7 @@ window.addEventListener("load", function () {
         }
 
         if ( a && b && c ){
-            artyom.say("It is not allowed to compare three factories");
+            artyom.say("Unfortunately, It is not allowed to compare three factories");
             reset();
             return 0;
         }
@@ -168,9 +168,10 @@ window.addEventListener("load", function () {
 
             // nothiing wanted? so all said
             if (counter == 0){
-                stack.push("A");
-                stack.push("B");
+
                 stack.push("C");
+                stack.push("B");
+                stack.push("A");
             }
             if (inner_counter == 0){
                 inner_stack.push("produced units");
@@ -195,7 +196,7 @@ window.addEventListener("load", function () {
                     }
               } 
 
-              if (i != s_l-2){
+              if (i < s_l-1){
                 artyom.say(" and ");
               }
         } else {
@@ -204,9 +205,9 @@ window.addEventListener("load", function () {
             artyom.say("Between these two dates ");
             // nothiing wanted? so all said
             if (counter == 0){
-                stack.push("A");
-                stack.push("B");
                 stack.push("C");
+                stack.push("B");
+                stack.push("A");
             }
             if (inner_counter == 0){
                 inner_stack.push("produced units");
@@ -218,7 +219,7 @@ window.addEventListener("load", function () {
             let inner_s_l =inner_stack.length;
 
             for (j = 0; j < inner_s_l; j++) {
-                artyom.say("the difference for " + temp_stack.pop());
+                artyom.say("the difference for " + inner_stack.pop());
                 
                 let temp_stack = deepcopy(stack);
 
