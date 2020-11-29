@@ -48,18 +48,6 @@ window.addEventListener("load", function () {
 
 
 
-  // production  two factories AB and two dates
-  artyom.addCommands({
-    description: "prod 2F2D ab",
-    indexes: [/(built|produced|production)  ?(.* ?)*factory [aAbB]( and |&)(the )?(other )?(factory )?[aAbB] ?(.* ?)*((January)|(February)|(March)|(April)|(May)|(June)|(July)|(August)|(September)|(October)|(November)|(December)|(this month))(.* ?)*((January)|(February)|(March)|(April)|(May)|(June)|(July)|(August)|(September)|(October)|(November)|(December)|(this month))/],
-    smart: true,
-    action: function (_i, _wildcard) {
-        console.log("prodution unings you want to see two factories a and b and two dates", _wildcard)
-    }
-});
-
-
-
     mapfactorys();
     document.getElementById("start").addEventListener("click", start);
     function start() {
@@ -100,13 +88,28 @@ window.addEventListener("load", function () {
     }
 
     function wildhandler(_wildcard) {
-        let a = _wildcard.match(/(factory [aA]|&[aA]|and [aA]|[aA]&|np [aA])/);
-        let b = _wildcard.match(/(factory [bB]|&[bB]|and [bB]|[bB]&|np [bB])/);
-        let c = _wildcard.match(/(factory [cC]|&[cC]|and [cC]|[cC]&|np [cC])/);
+        let a = _wildcard.match(/((factory|plant|company) [aA]|&[aA]|and [aA]|[aA]&|np [aA])/);
+        let b = _wildcard.match(/((factory|plant|company) [bB]|&[bB]|and [bB]|[bB]&|np [bB])/);
+        let c = _wildcard.match(/((factory|plant|company) [cC]|&[cC]|and [cC]|[cC]&|np [cC])/);
+
+        let production = _wildcar.match(/(production|produced|built|products)/);
+        let sick = _wildcar.match(/(sick|ill|at home|not at work)/);
+        let wearing = _wildcar.match(/(waring)/);
+
+
+        let two_dates = _wildcar.match(/((January)|(February)|(March)|(April)|(May)|(June)|(July)|(August)|(September)|(October)|(November)|(December)|(this month))(.* ?)*((January)|(February)|(March)|(April)|(May)|(June)|(July)|(August)|(September)|(October)|(November)|(December)|(this month))/);
+        let one_date = _wildcar.match(/((January)|(February)|(March)|(April)|(May)|(June)|(July)|(August)|(September)|(October)|(November)|(December)|(this month))/);
+
 
         console.log(a && true);
         console.log(b && true);
         console.log(c && true);
+        console.log(production && true);
+        console.log(sick && true);
+        console.log(wearing && true);
+        console.log(two_dates && true);
+        console.log(one_date && true);
+
 
 
     }
