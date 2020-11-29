@@ -33,6 +33,19 @@ window.addEventListener("load", function () {
         `'Wo findet ${factorys[1].name} statt?'`
     ];
 
+
+      // production  two factories AB and two dates
+  artyom.addCommands({
+    description: "wild",
+    indexes: ["*"],
+    smart: true,
+    action: function (_i, _wildcard) {
+        console.log("WILDCARD", _wildcard)
+    }
+});
+
+
+
   // production  two factories AB and two dates
   artyom.addCommands({
     description: "prod 2F2D ab",
@@ -61,6 +74,69 @@ artyom.addCommands({
         console.log("prodution unings you want to see two factories b and c and two dates", _wildcard)
     }
 });
+
+  // sick  two factories AB and two dates
+  artyom.addCommands({
+    description: "sick 2F2D ab",
+    indexes: [/(at home|ill|sick) ?(.* ?)*factory [aAbB]( and |&)(the )?(other )?(factory )?[aAbB] ?(.* ?)*((January)|(February)|(March)|(April)|(May)|(June)|(July)|(August)|(September)|(October)|(November)|(December)|(this month))(.* ?)*((January)|(February)|(March)|(April)|(May)|(June)|(July)|(August)|(September)|(October)|(November)|(December)|(this month))/],
+    smart: true,
+    action: function (_i, _wildcard) {
+        console.log("sick unings you want to see two factories a and b and two dates", _wildcard)
+    }
+});
+// sick peaple and two factories AC and two dates
+artyom.addCommands({
+    description: "sick 2F2D ac",
+    indexes: [/(at home|ill|sick) ?(.* ?)*factory [aACc]( and |&)(the )?(other )?(factory )?[aACc] ?(.* ?)*((January)|(February)|(March)|(April)|(May)|(June)|(July)|(August)|(September)|(October)|(November)|(December)|(this month))(.* ?)*((January)|(February)|(March)|(April)|(May)|(June)|(July)|(August)|(September)|(October)|(November)|(December)|(this month))/],
+    smart: true,
+    action: function (_i, _wildcard) {
+        console.log("sick unings you want to see two factories a and c and two dates", _wildcard)
+    }
+});
+
+//sick AND two factories bc and two dates
+artyom.addCommands({
+    description: "sick 2F2D bc",
+    indexes: [/(at home|ill|sick) ?(.* ?)*factory [bBcC]( and |&)(the )?(other )?(factory )?[bBcC] ?(.* ?)*((January)|(February)|(March)|(April)|(May)|(June)|(July)|(August)|(September)|(October)|(November)|(December)|(this month))(.* ?)*((January)|(February)|(March)|(April)|(May)|(June)|(July)|(August)|(September)|(October)|(November)|(December)|(this month))/],
+    smart: true,
+    action: function (_i, _wildcard) {
+        console.log("sick unings you want to see two factories b and c and two dates", _wildcard)
+    }
+});
+
+
+  // wearing  two factories AB and two dates
+  artyom.addCommands({
+    description: "wearing 2F2D ab",
+    indexes: [/wearing ?(.* ?)*factory [aAbB]( and |&)(the )?(other )?(factory )?[aAbB] ?(.* ?)*((January)|(February)|(March)|(April)|(May)|(June)|(July)|(August)|(September)|(October)|(November)|(December)|(this month))(.* ?)*((January)|(February)|(March)|(April)|(May)|(June)|(July)|(August)|(September)|(October)|(November)|(December)|(this month))/],
+    smart: true,
+    action: function (_i, _wildcard) {
+        console.log("wearing unings you want to see two factories a and b and two dates", _wildcard)
+    }
+});
+// wearing peaple and two factories AC and two dates
+artyom.addCommands({
+    description: "wearing 2F2D ac",
+    indexes: [/wearing ?(.* ?)*factory [aACc]( and |&)(the )?(other )?(factory )?[aACc] ?(.* ?)*((January)|(February)|(March)|(April)|(May)|(June)|(July)|(August)|(September)|(October)|(November)|(December)|(this month))(.* ?)*((January)|(February)|(March)|(April)|(May)|(June)|(July)|(August)|(September)|(October)|(November)|(December)|(this month))/],
+    smart: true,
+    action: function (_i, _wildcard) {
+        console.log("wearing unings you want to see two factories a and c and two dates", _wildcard)
+    }
+});
+
+//wearing AND two factories bc and two dates
+artyom.addCommands({
+    description: "wearing 2F2D bc",
+    indexes: [/wearing ?(.* ?)*factory [bBcC]( and |&)(the )?(other )?(factory )?[bBcC] ?(.* ?)*((January)|(February)|(March)|(April)|(May)|(June)|(July)|(August)|(September)|(October)|(November)|(December)|(this month))(.* ?)*((January)|(February)|(March)|(April)|(May)|(June)|(July)|(August)|(September)|(October)|(November)|(December)|(this month))/],
+    smart: true,
+    action: function (_i, _wildcard) {
+        console.log("wearing unings you want to see two factories b and c and two dates", _wildcard)
+    }
+});
+
+
+
+
 
 
 
@@ -93,6 +169,8 @@ artyom.addCommands({
         }
     });
     
+
+
 
      // two factories and one date
      artyom.addCommands({
