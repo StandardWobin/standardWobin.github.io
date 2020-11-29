@@ -192,7 +192,6 @@ window.addEventListener("load", function () {
                     } else{
                         artyom.say("the amount of " + temp_stack.pop() + " is " + getRandomInt(5,5000));
                     }
-
                     }
               } 
 
