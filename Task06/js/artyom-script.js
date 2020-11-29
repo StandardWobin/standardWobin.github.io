@@ -100,13 +100,13 @@ window.addEventListener("load", function () {
     }
 
     function wildhandler(_wildcard) {
-        let a = _wildcard.match(/(factory [aA]|&[aA]|and [aA]|[aA]&)/);
-        let b = _wildcard.match(/(factory [bB]|&[bB]|and [bB]|[bB]&)/);
-        let c = _wildcard.match(/(factory [cC]|&[cC]|and [cC]|[cC]&)/);
+        let a = _wildcard.match(/(factory [aA]|&[aA]|and [aA]|[aA]&|np [aA])/);
+        let b = _wildcard.match(/(factory [bB]|&[bB]|and [bB]|[bB]&|np [bB])/);
+        let c = _wildcard.match(/(factory [cC]|&[cC]|and [cC]|[cC]&|np [cC])/);
 
-        console.log(a);
-        console.log(b);
-        console.log(c);
+        console.log(a && true);
+        console.log(b && true);
+        console.log(c && true);
 
 
     }
