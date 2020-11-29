@@ -168,11 +168,13 @@ window.addEventListener("load", function () {
 
         if ( !a && !b && !c && !production && !sick && !wearing && !two_dates && !one_date  ){
             artyom.say("Please ask for factory a,b or and for production units, sick people or waring parts and for one or two dates");
-            break;
+            return 0;
         }
 
         if ( a && b && c ){
             artyom.say("It is not allowed to compare three factories");
+            reset();
+            return 0;
         }
 
 
