@@ -286,6 +286,6 @@ window.addEventListener("load", function () {
         for (const facto of factorys) {
             factorysByName[facto.name] = facto;
         }
-    }
-});*/
+    }*/
+});
 //# sourceMappingURL=artyom-script.js.map
