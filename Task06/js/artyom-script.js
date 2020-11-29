@@ -188,7 +188,9 @@ window.addEventListener("load", function () {
                 let temp_stack = deepcopy(inner_stack);
                 for (j = 0; j < inner_s_l; j++) {
                     if (j != inner_s_l-1){
-                        artyom.say("the amount of " + temp_stack.pop() + " is " + getRandomInt(5,5000) + " and ");
+                        artyom.say("the amount of " + temp_stack.pop() + " is " + getRandomInt(5,5000));
+                        artyom.say(" and ");
+
                     } else{
                         artyom.say("the amount of " + temp_stack.pop() + " is " + getRandomInt(5,5000));
                     }
@@ -218,14 +220,14 @@ window.addEventListener("load", function () {
             let inner_s_l =inner_stack.length;
 
             for (j = 0; j < inner_s_l; j++) {
-                artyom.say("the difference for " + inner_stack.pop());
+                artyom.say("The difference for " + inner_stack.pop());
                 
                 let temp_stack = deepcopy(stack);
 
                 let s_l =temp_stack.length;
 
                 for (i = 0; i < s_l; i++) {
-                    artyom.say(" for Factory " + temp_stack.pop() + " is" + getRandomInt(-50,50));
+                    artyom.say(" for Factory " + temp_stack.pop() + " is " + get_half_times_a_minus_string() + " " + getRandomInt(-50,50) + " " + get_half_times_a_percent_string() + ".");
                 } 
             }
         }
@@ -233,6 +235,25 @@ window.addEventListener("load", function () {
     }
 
 
+    function get_half_times_a_minus_string(){
+
+        if (getRandomInt(0,100) <50){
+            return "minus"
+        }
+        else{
+            return ""
+        }
+    }
+
+    function get_half_times_a_percent_string(){
+
+        if (getRandomInt(0,100) <50){
+            return "percent"
+        }
+        else{
+            return ""
+        }
+    }
     function deepcopy(obj) {
         if (null == obj || "object" != typeof obj) return obj;
         var copy = obj.constructor();
