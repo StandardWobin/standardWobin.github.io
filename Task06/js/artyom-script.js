@@ -167,7 +167,8 @@ window.addEventListener("load", function () {
 
 
         if ( !a && !b && !c && !production && !sick && !wearing && !two_dates && !one_date  ){
-            artyom.say("Everything works fine");
+            artyom.say("Please ask for factory a,b or and for production units, sick people or waring parts and for one or two dates");
+            break;
         }
 
         if ( a && b && c ){
@@ -214,9 +215,8 @@ window.addEventListener("load", function () {
                     }
               } 
 
-              if (i != s_l-1){
-                artyom.say("and");
-            }
+              if (i != s_l-2){
+                artyom.say(" and ");
 
 
         }
