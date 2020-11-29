@@ -23,7 +23,7 @@ window.addEventListener("load", function () {
       // production  two factories AB and two dates
       artyom.addCommands({
         description: "wild",
-        indexes: ["reset"],
+        indexes: [/reset/],
         smart: true,
         action: function (_i, _wildcard) {
             console.log("reset");
@@ -93,11 +93,11 @@ window.addEventListener("load", function () {
             sick = _wildcard.match(/(sick|ill|at home|not at work)/);
         }
         if (wearing == null){
-            wearing = _wildcard.match(/(waring)/);
+            wearing = _wildcard.match(/(wearing)/);
         }
 
         if (two_dates == null){
-            two_dates = _wildcard.match(/((January)|(February)|(March)|(April)|(May)|(June)|(July)|(August)|(September)|(October)|(November)|(December)|(this month))(.* ?)*((January)|(February)|(March)|(April)|(May)|(June)|(July)|(August)|(September)|(October)|(November)|(December)|(this month))/);
+            two_dates = _wildcard.match(/((January)|(February)|(March)|(April)|(May)|(June)|(July)|(August)|(September)|(October)|(November)|(December)|(this month)) ?(.* ?)* ?((January)|(February)|(March)|(April)|(May)|(June)|(July)|(August)|(September)|(October)|(November)|(December)|(this month))/);
         }
         if (one_date == null){
             one_date = _wildcard.match(/((January)|(February)|(March)|(April)|(May)|(June)|(July)|(August)|(September)|(October)|(November)|(December)|(this month))/);
