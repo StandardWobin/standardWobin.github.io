@@ -111,12 +111,12 @@ window.addEventListener("load", function () {
 
         if (two_dates == null){
             console.log("update two dates");
-            two_dates = _wildcard.match(/((January)|(February)|(March)|(April)|(May)|(June)|(July)|(August)|(September)|(October)|(November)|(December)|(this month)) ?(.* ?)* ?((January)|(February)|(March)|(April)|(May)|(June)|(July)|(August)|(September)|(October)|(November)|(December)|(this month))/);
+            two_dates = _wildcard.match(/((january)|(february)|(march)|(april)|(May)|(june)|(july)|(august)|(september)|(october)|(november)|(december)|(this month)) ?(.* ?)* ?((january)|(february)|(march)|(april)|(May)|(june)|(july)|(august)|(september)|(october)|(november)|(december)|(this month))/);
         }
         if (one_date == null){
             console.log("update one datessss");
 
-            one_date = _wildcard.match(/(January|February|March|April|May|june|July|August|September|October|November|December|this month)/);
+            one_date = _wildcard.match(/(january|february|march|april|may|june|july|august|september|october|november|december|this month)/);
         }
 
         console.log(a && true);
@@ -178,17 +178,32 @@ window.addEventListener("load", function () {
         // PASS
         if (one_date && !two_dates){
             artyom.say("For the specific date");
+
+            // nothiing wanted? so all said
+            if (counter == 0){
+                stack.push("A");
+                stack.push("B");
+                stack.push("C");
+            }
+            if (inner_counter == 0){
+                stack.push("the amount of produced units");
+                stack.push("the amount of sick people");
+                stack.push("the amount of broken wearing parts");
+            }
+
+
             let s_l =stack.length;
             for (i = 0; i < s_l; i++) {
                 artyom.say("Factory " + stack.pop());
 
                 let inner_s_l =inner_stack.length;
-                let temp_stack = inner_stack;
+                let temp_stack = deepcopy(inner_stack);
                 for (j = 0; j < inner_s_l; j++) {
-                    artyom.say(temp_stack.pop() + " is " + getRandomInt(5,5000));
-
                     if (j != inner_s_l-1){
-                        artyom.say("and");
+                        artyom.say(temp_stack.pop() + " is " + getRandomInt(5,5000) + " and ");
+                    } else{
+                        artyom.say(temp_stack.pop() + " is " + getRandomInt(5,5000));
+                    }
 
                     }
               } 
@@ -212,6 +227,18 @@ window.addEventListener("load", function () {
 
 
     }
+
+
+    function deepcopy(obj) {
+        if (null == obj || "object" != typeof obj) return obj;
+        var copy = obj.constructor();
+        for (var attr in obj) {
+            if (obj.hasOwnProperty(attr)) copy[attr] = obj[attr];
+        }
+        return copy;
+    }
+
+
 
     function getRandomInt(min, max) {
         min = Math.ceil(min);
