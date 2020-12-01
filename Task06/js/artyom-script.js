@@ -9,7 +9,8 @@ window.addEventListener("load", function () {
     let wearing;
     let one_date;
     let two_dates;
-
+    let today;
+    let highest;
 
     
 
@@ -67,20 +68,23 @@ window.addEventListener("load", function () {
             wearing = null;
             two_dates = null;
             one_date = null;
+            today = null;
+            highest = null;
+
             artyom.sayRandom(["Allright, can I help you with something else", "I hope this was helpful, what else can i do you four?", "feel free to ask another question", "thank you for traveling with deusche bahn"]);
     }
 
     function wildhandler(_wildcard) {
         if (a == null){
-            a = _wildcard.match(/((factory|plant|company) [aA]|&[aA]|and [aA]|[aA]&|np [aA])/);
+            a = _wildcard.match(/((factory|plant|company|victory) [aA]|&[aA]|and [aA]|[aA]&|np [aA])/);
         }
         console.log("one");
         if (b == null){
-            b = _wildcard.match(/((factory|plant|company) [bB]|&[bB]|and [bB]|[bB]&|np [bB]| [bB] )/);
+            b = _wildcard.match(/((factory|plant|company|victory) [bB]|&[bB]|and [bB]|[bB]&|np [bB]| [bB] )/);
         }
         console.log("two");
         if (c == null){
-            c = _wildcard.match(/((factory|plant|company) [cC]|&[cC]|and [cC]|[cC]&|np [cC]| [cC] )/);
+            c = _wildcard.match(/((factory|plant|company|victory) [cC]|&[cC]|and [cC]|[cC]&|np [cC]| [cC] )/);
         }
         console.log("three");
 
@@ -109,6 +113,18 @@ window.addEventListener("load", function () {
         }
         console.log("eight");
 
+        if (today == null){
+            today = _wildcard.match(/(today|this day|this morning|this noon|since morning)/);
+        }
+
+
+        if (highest == null){
+            highest = _wildcard.match(/(highest|max|is more (than|then)|most)/);
+        }
+
+
+
+
 
         console.log(a && true);
         console.log(b && true);
@@ -118,7 +134,12 @@ window.addEventListener("load", function () {
         console.log(wearing && true);
         console.log(two_dates && true);
         console.log(one_date && true);
+        console.log(today && true);
+        console.log(highest && true);
 
+
+
+        
         let counter = 0;
         stack = [];
 
@@ -138,7 +159,10 @@ window.addEventListener("load", function () {
         }
    
 
-   
+        if (tofay){
+            one_date = null;
+            two_dates = null;
+        }
         inner_stack = [];
         inner_counter = 0;
         if (production){
@@ -161,11 +185,66 @@ window.addEventListener("load", function () {
             return 0;
         }
 
+ 
+
+
+        // QUESTION ONE
+        if ( a && b && !one_date && !two_dates && production){
+            artyom.say("Today there are some people sick, for factory A there are 15 people sick which is 7%, for the factory B its 34 which is 16% of the people not coming to work");
+            reset();
+            return 0;
+
+        }
+
+
+      
+
+
+        // QUESTION ONE
+        if ( a && b && !one_date && !two_dates && production){
+            artyom.say("Today there are some people sick, for factory A there are 15 people sick which is 7%, for the factory B its 34 which is 16% of the people not coming to work");
+            reset();
+            return 0;
+
+        }
+
+
+        // QUESTION two
+        if (a && production && highest){
+            artyom.say("The month with the most produced units in factory A is May ");
+            reset();
+            return 0;
+        }
+
+
+        // QUESTION three
+        if (a && production && !one_date && !two_dates ){
+            artyom.say("Until now, in all factory, there were 720 Units produced");
+            reset();
+            return 0;
+        }
+
+
+        // QUESTION four
+        if (a && wearing && !one_date && !two_dates && highest ){
+            artyom.say("The nuzzles cost today the most. I read it again slowly: nuuuuuzzzzzlllleeeeess");
+            reset();
+            return 0;
+        }
+        
+
+
+        // shield for loops
         if ( a && b && c ){
             artyom.say("Unfortunately, It is not allowed to compare three factories");
             reset();
             return 0;
         }
+
+
+
+
+
 
 
         // PASS
