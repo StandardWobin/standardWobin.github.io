@@ -159,7 +159,7 @@ window.addEventListener("load", function () {
         }
    
 
-        if (tofay){
+        if (today){
             one_date = null;
             two_dates = null;
         }
