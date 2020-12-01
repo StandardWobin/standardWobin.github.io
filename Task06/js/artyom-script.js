@@ -11,6 +11,7 @@ window.addEventListener("load", function () {
     let two_dates;
     let today;
     let highest;
+    let all_fact;
 
     
 
@@ -70,6 +71,7 @@ window.addEventListener("load", function () {
             one_date = null;
             today = null;
             highest = null;
+            all_fact = null;
 
             artyom.sayRandom(["Allright, can I help you with something else", "I hope this was helpful, what else can i do you four?", "feel free to ask another question", "thank you for traveling with deusche bahn"]);
     }
@@ -94,7 +96,7 @@ window.addEventListener("load", function () {
         console.log("four");
 
         if (sick == null){
-            sick = _wildcard.match(/(sick|ill|at home|not at work)/);
+            sick = _wildcard.match(/(sick|ill|at home|not at work|6)/);
         }
         console.log("five");
 
@@ -122,7 +124,12 @@ window.addEventListener("load", function () {
             highest = _wildcard.match(/(highest|max|is more (than|then)|most)/);
         }
 
+        if (all_fact == null){
+            all_fact = _wildcard.match(/(all( the)? plants|all( the)? factories|all( the)? factories)/);
+        }
 
+
+        all_fact
 
 
 
@@ -136,7 +143,9 @@ window.addEventListener("load", function () {
         console.log(one_date && true);
         console.log(today && true);
         console.log(highest && true);
+        console.log(all_fact && true);
 
+        
 
 
         
@@ -218,7 +227,7 @@ window.addEventListener("load", function () {
 
 
         // QUESTION three
-        if (a && production && !one_date && !two_dates ){
+        if (((a && b && c) || all_fact) && production && !one_date && !two_dates ){
             artyom.say("Until now, in all factory, there were 720 Units produced");
             reset();
             return 0;
