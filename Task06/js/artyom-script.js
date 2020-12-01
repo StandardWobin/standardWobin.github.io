@@ -101,7 +101,7 @@ window.addEventListener("load", function () {
         console.log("five");
 
         if (wearing == null){
-            wearing = _wildcard.match(/(wearing)/);
+            wearing = _wildcard.match(/(wearing|raring|rowing|parts)/);
         }
         console.log("six");
 
@@ -125,7 +125,7 @@ window.addEventListener("load", function () {
         }
 
         if (all_fact == null){
-            all_fact = _wildcard.match(/(all( the)? plants|all( the)? factories|all( the)? factories)/);
+            all_fact = _wildcard.match(/(all( the)? plants|all( the)? factories|all( the)? factories|oldfactory)/);
         }
 
 
