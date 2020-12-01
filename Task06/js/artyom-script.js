@@ -133,17 +133,17 @@ window.addEventListener("load", function () {
 
 
 
-        console.log(a && true);
-        console.log(b && true);
-        console.log(c && true);
-        console.log(production && true);
-        console.log(sick && true);
-        console.log(wearing && true);
-        console.log(two_dates && true);
-        console.log(one_date && true);
-        console.log(today && true);
-        console.log(highest && true);
-        console.log(all_fact && true);
+        console.log("a " + a && true);
+        console.log("b " + b && true);
+        console.log("c " + c && true);
+        console.log("Production " + production && true);
+        console.log("sick " + sick && true);
+        console.log("wearing " + wearing && true);
+        console.log("two dates" + two_dates && true);
+        console.log("onedate " + one_date && true);
+        console.log("today " + today && true);
+        console.log("highest " + highest && true);
+        console.log("all facts " + all_fact && true);
 
         
 
