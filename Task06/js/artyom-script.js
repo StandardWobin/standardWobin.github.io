@@ -201,7 +201,7 @@ window.addEventListener("load", function () {
 
 
         // QUESTION ONE
-        if ( a && b && !one_date && !two_dates && production){
+        if ( a && b && !one_date && !two_dates && sick){
             artyom.say("Today there are some people sick, for factory A there are 15 people sick which is 7%, for the factory B its 34 which is 16% of the people not coming to work");
             reset();
             return 0;
