@@ -79,7 +79,7 @@ window.addEventListener("load", function () {
                 console.log("Ready!");
                 artyom.sayRandom([
                     "Good Morning",
-                    "Hey, good to see you again",
+                    "Hey, good to see you",
                     "Hey, good to have you here",
                     "Hello, how can i help?"
                 ]);
