@@ -90,19 +90,19 @@ window.addEventListener("load", function () {
     function reset(_wildcard) {
 
 
-            lasta = a;
-            lastb = b;
-            lastc = c;
-            lastsick = sick;
-            lastproduction = production;
-            lastwearing = wearing;
-            lasttwo_dates = two_dates;
-            lastone_date = one_date;
-            lasttoday = today;
-            lasthighest = highest;
-            lastall_fact = all_fact;
-            lastpercent = percent;
-            lastrepeat = repeat;
+            lasta = deepcopy(a);
+            lastb = deepcopy(b);
+            lastc = deepcopy(c);
+            lastsick = deepcopy(sick);
+            lastproduction = deepcopy(production);
+            lastwearing = deepcopy(wearing);
+            lasttwo_dates = deepcopy(two_dates);
+            lastone_date = deepcopy(one_date);
+            lasttoday = deepcopy(today);
+            lasthighest = deepcopy(highest);
+            lastall_fact = deepcopy(all_fact);
+            lastpercent = deepcopy(percent);
+            lastrepeat = deepcopy(repeat);
 
 
             a = null;
@@ -185,7 +185,7 @@ window.addEventListener("load", function () {
         }
 
         if (repeat == null){
-            repeat = _wildcard.match(/(repeat|again|one more time|what|)/);
+            repeat = _wildcard.match(/(repeat|again|one more time|)/);
         }
 
 
@@ -263,19 +263,19 @@ window.addEventListener("load", function () {
 
 
         if (repeat){
-            a = lasta;
-            b = lastb;
-            c = lastc;
-            sick = lastsick;
-            production = lastproduction;
-            waring = lastwearing;
-            two_dates = lasttwo_dates;
-            one_date = lastone_date;
-            today = lasttoday;
-            highest = lasthighest;
-            all_fact = lastall_fact;
-            percent = lastpercent;
-            repeat = repeat;
+            a = deepcopy(lasta);
+            b = deepcopy(lastb);
+            c = deepcopy(lastc);
+            sick = deepcopy(lastsick);
+            production = deepcopy(lastproduction);
+            waring = deepcopy(lastwearing);
+            two_dates = deepcopy(lasttwo_dates);
+            one_date = deepcopy(lastone_date);
+            today = deepcopy(lasttoday);
+            highest = deepcopy(lasthighest);
+            all_fact = deepcopy(lastall_fact);
+            percent = deepcopy(lastpercent);
+            repeat = deepcopy(repeat);
             artyom.say("I will repeat the last sentence..");
 
         }
