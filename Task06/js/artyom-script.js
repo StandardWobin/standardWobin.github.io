@@ -24,7 +24,7 @@ window.addEventListener("load", function () {
     let lasttwo_dates;
     let lastone_date;
     let lasttoday;
-    let asthighest;
+    let lasthighest;
     let lastall_fact;
     let lastpercent;
     let lastrepeat;
@@ -178,7 +178,6 @@ window.addEventListener("load", function () {
 
 
 
-        all_fact
 
 
 
