@@ -267,6 +267,7 @@ window.addEventListener("load", function () {
 
         if ( !a && !b && !c && !production && !sick && !wearing && !two_dates && !one_date  ){
             artyom.say("Please ask for factory a or b or c and for production units, sick people or wearing parts and for one or two dates");
+            reset();
             return 0;
         }
 
