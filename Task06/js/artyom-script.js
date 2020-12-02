@@ -205,6 +205,7 @@ window.addEventListener("load", function () {
         console.log("percent " + percent );
         console.log("repeat " + repeat );
 
+        console.log("test " + null && true);
 
         console.log("a " + a && true);
         console.log("b " + b && true);
