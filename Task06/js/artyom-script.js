@@ -32,7 +32,7 @@ window.addEventListener("load", function () {
 
       // production  two factories AB and two dates
     artyom.addCommands({
-        description: "wild",
+        description: "resest",
         indexes: [/reset/],
         smart: true,
         action: function (_i, _wildcard) {
@@ -48,6 +48,18 @@ window.addEventListener("load", function () {
         action: function (_i, _wildcard) {
             console.log("WILDCARD", _wildcard)
             wildhandler(_wildcard);
+        }
+    });
+
+          
+    artyom.addCommands({
+        description: "stop",
+        indexes: [/(stop|halt|shut up)/],
+        smart: true,
+        action: function (_i, _wildcard) {
+            console.log("STOP", _wildcard);
+            artyom.shutUp();
+            artyom.say("ok, is shut up, how can I help?");
         }
     });
 
