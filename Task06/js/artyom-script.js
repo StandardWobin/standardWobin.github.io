@@ -191,6 +191,19 @@ window.addEventListener("load", function () {
 
 
 
+        console.log("a " + a );
+        console.log("b " + b );
+        console.log("c " + c );
+        console.log("Production " + production );
+        console.log("sick " + sick );
+        console.log("wearing " + wearing );
+        console.log("two dates" + two_dates );
+        console.log("onedate " + one_date );
+        console.log("today " + today );
+        console.log("highest " + highest );
+        console.log("all facts " + all_fact );
+        console.log("percent " + percent );
+        console.log("repeat " + repeat );
 
 
         console.log("a " + a && true);
