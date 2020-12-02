@@ -36,7 +36,7 @@ window.addEventListener("load", function () {
         action: function (_i, _wildcard) {
             console.log("STOP", _wildcard);
             artyom.shutUp();
-            artyom.sayRadom(["ok, I shut up, how can I help?", "ok boomer, what else do you want to know?"]);
+            artyom.sayRandom(["ok, I shut up, how can I help?", "ok boomer, what else do you want to know?"]);
         }
     });
 
@@ -207,7 +207,7 @@ window.addEventListener("load", function () {
 
         console.log("test " + null && true);
 
-        console.log("a " + a && true);
+        console.log("a " , a && true);
         console.log("b " + b && true);
         console.log("c " + c && true);
         console.log("Production " + production && true);
