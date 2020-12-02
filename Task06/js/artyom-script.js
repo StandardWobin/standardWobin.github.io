@@ -12,7 +12,22 @@ window.addEventListener("load", function () {
     let today;
     let highest;
     let all_fact;
+    let percent;
+    let repeat;
 
+    let lasta;
+    let lastb;
+    let lastc;
+    let lastsick;
+    let lastproduction;
+    let lastwearing;
+    let lasttwo_dates;
+    let lastone_date;
+    let lasttoday;
+    let asthighest;
+    let lastall_fact;
+    let lastpercent;
+    let lastrepeat;
     
 
       // production  two factories AB and two dates
@@ -61,6 +76,23 @@ window.addEventListener("load", function () {
     }
 
     function reset(_wildcard) {
+
+
+            lasta = a;
+            lastb = b;
+            lastc = c;
+            lastsick = sick;
+            lastproduction = production;
+            lastwearing = wearing;
+            lasttwo_dates = two_dates;
+            lastone_date = one_date;
+            lasttoday = today;
+            lasthighest = highest;
+            lastall_fact = all_fact;
+            lastpercent = percent;
+            lastrepeat = repeat;
+
+
             a = null;
             b = null;
             c = null;
@@ -72,6 +104,13 @@ window.addEventListener("load", function () {
             today = null;
             highest = null;
             all_fact = null;
+            percent = null;
+            repeat = null;
+
+
+
+
+
 
             artyom.sayRandom(["Allright, can I help you with something else", "I hope this was helpful, what else can i do you four?", "feel free to ask another question", "thank you for traveling with deusche bahn"]);
     }
@@ -101,7 +140,7 @@ window.addEventListener("load", function () {
         console.log("five");
 
         if (wearing == null){
-            wearing = _wildcard.match(/(wearing|raring|rowing|parts)/);
+            wearing = _wildcard.match(/(wearing|raring|rowing|parts|fairing|bearing)/);
         }
         console.log("six");
 
@@ -125,8 +164,18 @@ window.addEventListener("load", function () {
         }
 
         if (all_fact == null){
-            all_fact = _wildcard.match(/(all( the)? plants|all( the)? factories|all( the)? factories|oldfactory)/);
+            all_fact = _wildcard.match(/(all( the)? plants|all( the)? factories|all( the)? factories|oldfactory|total)/);
         }
+
+
+        if (percent == null){
+            percent = _wildcard.match(/(percent|%|per cent|percentage)/);
+        }
+
+        if (repeat == null){
+            repeat = _wildcard.match(/(repeat|again|one more time|what|)/);
+        }
+
 
 
         all_fact
@@ -144,6 +193,8 @@ window.addEventListener("load", function () {
         console.log("today " + today && true);
         console.log("highest " + highest && true);
         console.log("all facts " + all_fact && true);
+        console.log("percent " + percent && true);
+        console.log("repeat " + repeat && true);
 
         
 
@@ -197,21 +248,35 @@ window.addEventListener("load", function () {
  
 
 
-        // QUESTION ONE
-        if ( a && b && !one_date && !two_dates && production){
-            artyom.say("Today there are some people sick, for factory A there are 15 people sick which is 7%, for the factory B its 34 which is 16% of the people not coming to work");
-            reset();
-            return 0;
+
+
+
+        if (repeat){
+            a = lasta;
+            b = lastb;
+            c = lastc;
+            sick = lastsick;
+            production = lastproduction;
+            waring = lastwearing;
+            two_dates = lasttwo_dates;
+            one_date = lastone_date;
+            today = lasttoday;
+            highest = lasthighest;
+            all_fact = lastall_fact;
+            percent = lastpercent;
+            repeat = repeat;
+            artyom.say("I will repeat the last sentence..");
 
         }
 
 
+        
+
+
       
-
-
         // QUESTION ONE
-        if ( a && b && !one_date && !two_dates && sick){
-            artyom.say("Today there are some people sick, for factory A there are 15 people sick which is 7%, for the factory B its 34 which is 16% of the people not coming to work");
+        if ((a && b && !one_date && !two_dates && sick) || percent){
+            artyom.say("Today there are some people sick, for factory A there are 15 people sick which is 7 percent, for the factory B its 34 which is 16 percent of the people not coming to work");
             reset();
             return 0;
 
@@ -220,7 +285,7 @@ window.addEventListener("load", function () {
 
         // QUESTION two
         if (a && production && highest){
-            artyom.say("The month with the most produced units in factory A is May ");
+            artyom.say("In this year, the month with the most produced units in factory A is May");
             reset();
             return 0;
         }
