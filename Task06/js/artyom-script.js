@@ -36,7 +36,7 @@ window.addEventListener("load", function () {
         action: function (_i, _wildcard) {
             console.log("STOP", _wildcard);
             artyom.shutUp();
-            artyom.say("ok, I shut up, how can I help?");
+            artyom.sayRadom(["ok, I shut up, how can I help?", "ok boomer, what else do you want to know?"]);
         }
     });
 
