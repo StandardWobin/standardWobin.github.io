@@ -185,7 +185,7 @@ window.addEventListener("load", function () {
         }
 
         if (repeat == null){
-            repeat = _wildcard.match(/(repeat|again|one more time|)/);
+            repeat = _wildcard.match(/(repeat|again|one more time)/);
         }
 
 
