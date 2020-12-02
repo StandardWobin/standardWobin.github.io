@@ -28,7 +28,18 @@ window.addEventListener("load", function () {
     let lastall_fact;
     let lastpercent;
     let lastrepeat;
-    
+              
+    artyom.addCommands({
+        description: "stop",
+        indexes: [/(stop|halt|shut up|quiet|quit|bitch)/],
+        smart: true,
+        action: function (_i, _wildcard) {
+            console.log("STOP", _wildcard);
+            artyom.shutUp();
+            artyom.say("ok, I shut up, how can I help?");
+        }
+    });
+
 
       // production  two factories AB and two dates
     artyom.addCommands({
@@ -51,17 +62,6 @@ window.addEventListener("load", function () {
         }
     });
 
-          
-    artyom.addCommands({
-        description: "stop",
-        indexes: [/(stop|halt|shut up)/],
-        smart: true,
-        action: function (_i, _wildcard) {
-            console.log("STOP", _wildcard);
-            artyom.shutUp();
-            artyom.say("ok, is shut up, how can I help?");
-        }
-    });
 
 
 
