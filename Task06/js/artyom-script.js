@@ -289,11 +289,15 @@ window.addEventListener("load", function () {
 
 
         
-
+        console.log("jeahjeah");
+        console.log(a && b && !one_date && !two_dates && sick);
+        console.log(percent);
+        console.log((a && b && !one_date && !two_dates && sick) || percent);
+        console.log("ende");
 
       
         // QUESTION ONE
-        if (((a && b && !one_date && !two_dates && sick) || percent)){
+        if ((a && b && !one_date && !two_dates && sick) || percent){
             artyom.say("Today there are some people sick, for factory A there are 15 people sick which is 7 percent, for the factory B its 34 which is 16 percent of the people not coming to work");
             reset();
             return 0;
