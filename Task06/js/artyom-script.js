@@ -291,13 +291,31 @@ window.addEventListener("load", function () {
 
 
       
-        // QUESTION ONE
+        // QUESTION ONE a b
         if ((a && b && !one_date && !two_dates && sick) || percent){
             artyom.say("Today there are some people sick, for factory A there are 15 people sick which is 7 percent, for the factory B its 34 which is 16 percent of the people not coming to work");
             reset();
             return 0;
 
         }
+
+            // QUESTION ONE a
+        if ((a && !b && !one_date && !two_dates && sick) || percent){
+            artyom.say("Today there are some people sick, for factory A there are 15 people sick which is 7 percent");
+            reset();
+            return 0;
+
+        }
+
+          // QUESTION ONE b
+          if ((!a && b && !one_date && !two_dates && sick) || percent){
+            artyom.say("Today there are some people sick, for the factory B its 34 which is 16 percent of the people not coming to work");
+            reset();
+            return 0;
+
+        }
+
+
 
 
         // QUESTION two
