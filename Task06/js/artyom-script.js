@@ -131,40 +131,32 @@ window.addEventListener("load", function () {
         if (a == null){
             a = _wildcard.match(/((factory|plant|company|victory) [aA]|&[aA]|and [aA]|[aA]&|np [aA])/);
         }
-        console.log("one");
         if (b == null){
             b = _wildcard.match(/((factory|plant|company|victory) [bB]|&[bB]|and [bB]|[bB]&|np [bB]| [bB] )/);
         }
-        console.log("two");
         if (c == null){
             c = _wildcard.match(/((factory|plant|company|victory) [cC]|&[cC]|and [cC]|[cC]&|np [cC]| [cC] )/);
         }
-        console.log("three");
 
         if (production == null){
             production = _wildcard.match(/(production|produced|built|products)/);
         }
-        console.log("four");
 
         if (sick == null){
             sick = _wildcard.match(/(sick|ill|at home|not at work|6)/);
         }
-        console.log("five");
 
         if (wearing == null){
             wearing = _wildcard.match(/(wearing|raring|rowing|parts|fairing|bearing)/);
         }
-        console.log("six");
 
         if (two_dates == null){
             two_dates = _wildcard.match(/((january)|(february)|(march)|(april)|(may)|(june)|(july)|(august)|(september)|(october)|(november)|(december)|(this month)) ?(.* ?) ?((january)|(february)|(march)|(april)|(may)|(june)|(july)|(august)|(september)|(october)|(november)|(december)|(this month))/);
         }
-        console.log("seven");
 
         if (one_date == null){
             one_date = _wildcard.match(/(january|february|march|april|may|june|july|august|september|october|november|december|this month)/);
         }
-        console.log("eight");
 
         if (today == null){
             today = _wildcard.match(/(today|this day|this morning|this noon|since morning)/);
@@ -205,21 +197,21 @@ window.addEventListener("load", function () {
         console.log("percent " + percent );
         console.log("repeat " + repeat );
 
-        console.log("test " + null && true);
+        console.log("test " , null && true);
 
         console.log("a " , a && true);
-        console.log("b " + b && true);
-        console.log("c " + c && true);
-        console.log("Production " + production && true);
-        console.log("sick " + sick && true);
-        console.log("wearing " + wearing && true);
-        console.log("two dates" + two_dates && true);
-        console.log("onedate " + one_date && true);
-        console.log("today " + today && true);
-        console.log("highest " + highest && true);
-        console.log("all facts " + all_fact && true);
-        console.log("percent " + percent && true);
-        console.log("repeat " + repeat && true);
+        console.log("b " , b && true);
+        console.log("c " , c && true);
+        console.log("Production " , production && true);
+        console.log("sick " , sick && true);
+        console.log("wearing " , wearing && true);
+        console.log("two dates" , two_dates && true);
+        console.log("onedate " , one_date && true);
+        console.log("today " , today && true);
+        console.log("highest " , highest && true);
+        console.log("all facts " , all_fact && true);
+        console.log("percent " , percent && true);
+        console.log("repeat " , repeat && true);
 
         
 
