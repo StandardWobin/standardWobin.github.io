@@ -328,7 +328,7 @@ window.addEventListener("load", function () {
 
         // QUESTION three
         if (((a && b && c) || all_fact) && production && !one_date && !two_dates ){
-            artyom.say("Until now, in all factory, there were 720 Units produced");
+            artyom.say("Until now, in all factorys, there were 720 units produced");
             reset();
             return 0;
         }
@@ -336,7 +336,7 @@ window.addEventListener("load", function () {
 
         // QUESTION four
         if (a && wearing && !one_date && !two_dates && highest ){
-            artyom.say("The nuzzles cost today the most. I read it again slowly: nuzzles");
+            artyom.say("In factory a, the nozzles cost today the most in compare to Factory B and C.");
             reset();
             return 0;
         }
