@@ -257,8 +257,8 @@ window.addEventListener("load", function () {
         }
 
 
-        if ( !a && !b && !c && !production && !sick && !wearing && !two_dates && !one_date  ){
-            artyom.say("Please ask for factory a or b or c and for production units, sick people or wearing parts and for one or two dates");
+        if ( !a && !b && !c && !production && !sick && !wearing && !two_dates && !one_date  && !repeat && !percent){
+            artyom.say("Please ask for factory a or b or c and for production units, sick people or wearing parts and for one or two dates some local maxima");
             reset();
             return 0;
         }
@@ -288,12 +288,7 @@ window.addEventListener("load", function () {
         }
 
 
-        
-        console.log("jeahjeah");
-        console.log(a && b && !one_date && !two_dates && sick);
-        console.log(percent);
-        console.log((a && b && !one_date && !two_dates && sick) || percent);
-        console.log("ende");
+
 
       
         // QUESTION ONE
