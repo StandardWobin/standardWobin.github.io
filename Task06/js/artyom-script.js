@@ -302,7 +302,7 @@ window.addEventListener("load", function () {
 
 
         // QUESTION two
-        if (a && production && highest){
+        if (a && !b && !c && production && highest){
             artyom.say("In this year, the month with the most produced units in factory A is May");
             reset();
             return 0;
