@@ -34,10 +34,14 @@ Demo of big screen:
 
 ### TASK 06
 WITH THE SETTING OF TASK 3,4
-1. VUI -> [click](/Task06/index.html)
 
 ### TASK 07
+A/B TEST
+Presentation: [click](https://lieszard.github.io/ixd/A-B-Test.pdf)
+
 ### TASK 08
+Idea of evil alarm -> [click](/8page.md)
+
 ### TASK 09
 ### TASK 10
 ### TASK 11
