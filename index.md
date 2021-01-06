@@ -41,8 +41,11 @@ Presentation: [click](https://lieszard.github.io/ixd/A-B-Test.pdf)
 
 ### TASK 08
 Idea of evil alarm -> [click](/8page.md)
-
+I did not like this idea so i went to a better one (task09)
 ### TASK 09
+Low Budget e voting system
+[click](/esp.md)
+
 ### TASK 10
 ### TASK 11
 ### TASK 12
